@@ -12,7 +12,7 @@ const App = () => (
         <Switch>
             <Route path="/public" component={ PublicPages } />
             <Route path="/" component={ PrivatePages } />
-            <Redirect to="/" />
+            <Redirect to="/public/" />
         </Switch>
     </div>
 );

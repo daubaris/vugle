@@ -43,7 +43,7 @@ class PrivatePages extends React.PureComponent {
                 </Header>
                 <Switch>
                     <Route path="/servers" component={ ServersPages } />
-                    <Redirect to="/servers" />
+                    <Redirect to="/public/landing" />
                 </Switch>
             </Container>
         );

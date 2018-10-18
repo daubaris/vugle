@@ -8,15 +8,15 @@
     height: 100vh;
 
     .content {
-      //height: 100%;
-      //align-items: center;
+      height: 100%;
+      align-items: center;
 
-      //.logo-wrapper {
-      //  display: flex;
-      //  justify-content: center;
-      //  align-items: center;
-      //  margin-bottom: 25px;
-      //}
+      .logo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25px;
+      }
     }
   }
 }

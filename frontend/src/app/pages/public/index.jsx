@@ -1,6 +1,4 @@
-import React from 'react';                                {/*<div className={ styles['logo-wrapper'] }>*/}
-                                    {/*<Logo />*/}
-                                {/*</div>*/}
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
