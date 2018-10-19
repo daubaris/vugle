@@ -25,7 +25,7 @@ class RestService {
             if (error && error.response && error.response.status === 401) {
                 // TODO
                 // Unauthorized
-                // window.location.href = '/public/login'; user should be redirected?
+                // window.location.href = '//'; user should be redirected?
             }
 
             return Promise.reject(error);

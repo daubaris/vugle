@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { push } from 'connected-react-router';
 import { SubmissionError } from 'redux-form';
-import { Card, CardBody } from 'reactstrap';
+import { Container, Row, Col, Card, CardBody } from 'reactstrap';
 
 import sessionActions from 'app/pages/private/session/redux/actions';
 import LoginForm from './form';
+
+import styles from './login.scss';
 
 class LoginPage extends React.PureComponent {
     constructor(props) {
@@ -33,13 +35,19 @@ class LoginPage extends React.PureComponent {
 
     render() {
         return (
-            <Card>
-                <CardBody>
-                    <LoginForm
-                        onSubmit={ this.onSubmitLogin }
-                    />
-                </CardBody>
-            </Card>
+            <Container className={ styles['login'] }>
+                <Row>
+                    <Col lg={{ size: 6, offset: 3 }}>
+                        <Card>
+                            <CardBody>
+                                <LoginForm
+                                    onSubmit={ this.onSubmitLogin }
+                                />
+                            </CardBody>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
         );
     }
 }
