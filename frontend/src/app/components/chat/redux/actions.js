@@ -14,5 +14,14 @@ export default {
         };
 
         dispatch(actions.addMessage(message));
+    },
+    addBotMessage: (suggestion) => (dispatch) => {
+        const message = {
+            type: 'bot',
+            id: new Date().getTime(),
+            message: suggestion.title,
+        };
+
+        dispatch(actions.addMessage(message));
     }
 };
