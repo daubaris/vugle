@@ -17,7 +17,8 @@ class PrivatePages extends React.PureComponent {
         super(props);
 
         if (!props.session.token) {
-            props.actions.router.push('//');
+            // props.actions.router.push('/');
+            window.location = '/public/login'
         }
 
         this.onClickLogout = this.onClickLogout.bind(this);
