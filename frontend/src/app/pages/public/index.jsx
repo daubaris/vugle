@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Route, Switch, Redirect} from 'react-router-dom';
-import {Container, Row, Col} from 'reactstrap';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {push} from 'connected-react-router';
@@ -9,8 +8,6 @@ import {push} from 'connected-react-router';
 import LoginPage from 'app/pages/public/login/login';
 import LandingPage from 'app/pages/public/landing/landing';
 import {Logo} from 'app/components/logo';
-
-import styles from './index.scss';
 
 class PublicPages extends React.Component {
 	constructor(props) {
