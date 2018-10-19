@@ -12,19 +12,48 @@ class SuggestionBar extends React.Component {
         super(props);
 
         this.state = {
-            suggestions: [{
-                id: 1,
-                title: 'Pranešk'
-            },{
-                id: 2,
-                title: 'Sužinok'
-            },{
-                id: 3,
-                title: 'Pažink'
-            },{
-                id: 4,
-                title: 'Pramogauk'
-            }]
+            suggestions: [
+                {
+                    id: 1,
+                    title: 'Noriu pranešti',
+                    responses: [
+                        {
+                            title: 'Pranešti?',
+                            random: 0.5,
+                        },
+                        {
+                            title: 'Ką norėtum pranešti?'
+                        }
+                    ]
+                },
+                {
+                    id: 2,
+                    title: 'Noriu sužinoti',
+                    responses: [
+                        {
+                            title: 'Ką norėtumet sužinoti?',
+                        },
+                    ]
+                },
+                {
+                    id: 3,
+                    title: 'Noriu pažinti',
+                    responses: [
+                        {
+                            title: 'Ką norėtumet pažinti?',
+                        },
+                    ]
+                },
+                {
+                    id: 4,
+                    title: 'Noriu pramogauti',
+                    responses: [
+                        {
+                            title: 'Kokios pramogos domina?',
+                        },
+                    ],
+                },
+            ]
         };
 
         this.onClick = this.onClick.bind(this);
