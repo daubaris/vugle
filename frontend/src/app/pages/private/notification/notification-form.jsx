@@ -17,6 +17,8 @@ import styles from './notification-page.scss';
 
 const NotificationForm = ({ handleSubmit, submitting, error }) => (
     <Form onSubmit={ handleSubmit }>
+        <h1>Sukurti naują pranešimą</h1>
+
         { error && <Alert color="danger">{ error }</Alert>}
 
         <Field
@@ -42,26 +44,15 @@ const NotificationForm = ({ handleSubmit, submitting, error }) => (
             }
         />
         <Field name="notificationType" component="select" className={ styles['dropdown'] }>
-            <option>Type</option>
-            <option value="success">Success</option>
-            <option value="warning">Warning</option>
-            <option value="danger">Danger</option>
-            <option value="info">Info</option>
+            <option>Tipas</option>
+            <option value="success">Sėkingas</option>
+            <option value="warning">Įspėjimas</option>
+            <option value="danger">Pavojingas</option>
+            <option value="info">Informacinis</option>
         </Field>
 
-        <Field
-            name="notificationUrl"
-            component={ TextField }
-            placeholder="Url"
-            validate={
-                [
-                    validations.required,
-                ]
-            }
-        />
-
         <Button
-            title="Submit"
+            title="Sukurti"
             type="submit"
             size="lg"
             block

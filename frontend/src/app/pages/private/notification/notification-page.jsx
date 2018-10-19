@@ -16,34 +16,28 @@ class NotificationPage extends React.PureComponent {
         this.onSubmitNotification = this.onSubmitNotification.bind(this);
     }
 
-    onSubmitNotification({ notificationTitle, notificationText, notificationType, notificationUrl }) {
-        console.log('submit', notificationTitle, notificationText, notificationType, notificationUrl);
-        const {
-            actions,
-        } = this.props;
-
-        const input = {
-            notificationTitle,
-            notificationText,
-            notificationType,
-            notificationUrl
-        };
-
-        restService.post('/sendNotification', input);
-
-        actions.router.push('/admin/dashboard');
+    onSubmitNotification(values) {
+        console.log(values);
+        restService.post('/sendNotification', values);
     }
 
     render() {
         return (
             <Container>
                 <Row>
-                    <Col lg={{ size: 6, offset: 3 }}>
+                    <Col lg={{ size: 6 }}>
                         <Card>
                             <CardBody>
                                 <NotificationForm
                                     onSubmit={ this.onSubmitNotification }
                                 />
+                            </CardBody>
+                        </Card>
+                    </Col>
+                    <Col lg={{ size: 6 }}>
+                        <Card>
+                            <CardBody>
+                                Poll form
                             </CardBody>
                         </Card>
                     </Col>
