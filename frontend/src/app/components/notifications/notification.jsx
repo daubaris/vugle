@@ -21,6 +21,7 @@ Notification.propType = {
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
         url: PropTypes.string,
     }),
 };
@@ -30,5 +31,6 @@ const demo = {
     "id": 23,
     "title": "Hack$Vilnius",
     "description": "Ka vakare?",
+    "type": "success",
     "url": "www.vilnius.lt"
 };
