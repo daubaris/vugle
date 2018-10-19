@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using VugleBE.Context;
-using VugleBE.Context.Models;
 using VugleBE.ViewModels;
 using PusherServer;
-using System.Net;
 
 namespace VugleBE.Controllers
 {
@@ -15,6 +9,12 @@ namespace VugleBE.Controllers
     [ApiController]
     public class PusherController : Controller
     {
+        /// <summary>
+        /// Pushes Notification based on input
+        /// </summary>
+        /// <param name="input">Notification data to be pushed</param>
+        /// <returns></returns>
+        /// <response code="200">Notification succesfully sent</response>
         [HttpPost]
         public async Task<ActionResult> PushNotification([FromBody] NotificationViewModel input)
         {
@@ -35,7 +35,7 @@ namespace VugleBE.Controllers
               "new-notification",
               input);
 
-            return BadRequest();
+            return Ok();
         }
     }
 }
