@@ -19,7 +19,7 @@ class Chat extends React.Component {
             actions,
         } = this.props;
 
-        actions.chat.addBotMessage({ title: 'Sveiki' });
+        actions.chat.addBotMessage({ title: 'Sveiki!' });
         actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?' });
     }
 
@@ -40,8 +40,6 @@ class Chat extends React.Component {
                             message={ message.message }
                         />
                     ))}
-					<Messages type='user' message={ 'one two' }/>
-					<Messages message={ 'one two' }/>
                 </div>
                 <SuggestionBar />
             </div>
