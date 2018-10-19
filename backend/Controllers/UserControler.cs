@@ -22,7 +22,7 @@ namespace VugleBE.Controllers
         /// <summary>
         /// Registers User in database
         /// </summary>
-        /// <response code="201">User succesfully created in database</response>
+        /// <response code="204">User succesfully created in database</response>
         /// <response code="400">User with current username already exists</response>      
         [HttpPut]
         [ProducesResponseType(204)]
