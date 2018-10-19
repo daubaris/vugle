@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace VugleBE.Context.Models
 {
@@ -7,5 +8,6 @@ namespace VugleBE.Context.Models
         public Guid Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public virtual ICollection<PollResponse> PollResponses {get;set;}
     }
 }

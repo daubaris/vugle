@@ -56,7 +56,11 @@ namespace VugleBE.Controllers
             
             if(user != null)
             {
-                return NoContent();
+                if(user.Password == request.Password)
+                {
+                    return NoContent();
+                }
+                return Unauthorized();
             }
             else
             {
