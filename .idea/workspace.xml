@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7289b376-566b-4cb5-8805-884063bc2f04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/notifications/notification.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/notifications/notifications.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/public/login/login.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/pusher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/private/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/private/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/private/session/redux/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/private/session/redux/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/public/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/public/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/public/landing/landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/public/landing/landing.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/public/login/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/public/login/login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/notifications/notification.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/notifications/notification.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -58,14 +47,14 @@
           <entry key="gitignore" value="3" />
           <entry key="html" value="1" />
           <entry key="js" value="163" />
-          <entry key="jsx" value="1697" />
+          <entry key="jsx" value="1722" />
           <entry key="scss" value="54" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="1" />
-          <entry key="JSX Harmony" value="1697" />
+          <entry key="JSX Harmony" value="1722" />
           <entry key="JavaScript" value="163" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="SCSS" value="54" />
@@ -93,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/app/components/notifications/notifications.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+            <state relative-caret-position="283">
+              <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -105,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/app/components/notifications/notification.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+            <state relative-caret-position="460">
+              <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -160,8 +149,8 @@
         <option value="$PROJECT_DIR$/frontend/src/app/services/pusher.js" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/notifications/notifications.js" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/public/landing/landing.jsx" />
-        <option value="$PROJECT_DIR$/frontend/src/app/components/notifications/notification.jsx" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/notifications/notifications.jsx" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/notifications/notification.jsx" />
       </list>
     </option>
   </component>
@@ -314,12 +303,12 @@
       <option name="presentableId" value="Default" />
       <updated>1539922898061</updated>
       <workItem from="1539922899309" duration="1292000" />
-      <workItem from="1539959360711" duration="3819000" />
+      <workItem from="1539959360711" duration="4073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5111000" />
+    <option name="totallyTimeSpent" value="5365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
@@ -510,20 +499,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/notifications/notification.jsx">
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/notifications/notifications.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        <state relative-caret-position="283">
+          <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/notifications/notifications.jsx">
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/notifications/notification.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        <state relative-caret-position="460">
+          <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
