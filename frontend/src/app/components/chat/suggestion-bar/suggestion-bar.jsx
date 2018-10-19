@@ -1,5 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import chatActions from './../redux/actions';
 import SuggestionsBubble from '../suggestions-bubble/suggestions-bubble';
+
 import styles from './suggestions-bar.scss';
 
 class SuggestionBar extends React.Component {
@@ -26,8 +31,12 @@ class SuggestionBar extends React.Component {
     }
 
 
-    onClick(id) {
-        alert(id);
+    onClick(suggestion) {
+        const {
+            actions,
+        } = this.props;
+
+        actions.chat.addUserMessage(suggestion);
     }
 
     render() {
@@ -40,8 +49,7 @@ class SuggestionBar extends React.Component {
 				{ suggestions.map(suggestion => (
 					<SuggestionsBubble
 						key={ suggestion.id }
-					    id={ suggestion.id }
-					    title={ suggestion.title }
+                        suggestion={ suggestion }
 						onClick={ this.onClick }
 					/>
 				))}
@@ -50,4 +58,14 @@ class SuggestionBar extends React.Component {
 	}
 }
 
-export default SuggestionBar;
+const mapStateToProps = (state) => ({
+    chat: state.chat,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    actions: {
+        chat: bindActionCreators(chatActions, dispatch)
+    },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SuggestionBar);

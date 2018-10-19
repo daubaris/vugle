@@ -3,5 +3,6 @@
 
   .char-area {
     height: calc(100vh - 126px);
+    overflow-y: scroll;
   }
 }

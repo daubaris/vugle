@@ -1,6 +1,5 @@
 import React from 'react';
 import { Pane } from 'evergreen-ui';
-import { Col, Row } from 'reactstrap';
 
 class SuggestionsBubble extends React.Component {
 	constructor(props) {
@@ -10,7 +9,7 @@ class SuggestionsBubble extends React.Component {
 	}
 
 	onClick() {
-		this.props.onClick(this.props.id);
+		this.props.onClick(this.props.suggestion);
 	}
 
 	render() {
@@ -20,12 +19,16 @@ class SuggestionsBubble extends React.Component {
 			margin: 5
 		};
 
+		const {
+			suggestion,
+		} = this.props;
+
 		return (
 			<Pane
 				{...cardStyles}
 				elevation={ 1 }
 				onClick={ this.onClick }>
-				{ this.props.title }
+				{ suggestion.title }
 			</Pane>
 		);
 	}
