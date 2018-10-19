@@ -1,5 +1,5 @@
 import React from 'react';
-import {Pane, Card, Strong} from 'evergreen-ui';
+import { Pane, Card, Strong } from 'evergreen-ui';
 
 class LandingPage extends React.Component {
 	render() {

@@ -13,6 +13,6 @@ export default {
     setToken: actions.setToken,
     logout: () => (dispatch) => {
         dispatch(actions.logout());
-        dispatch(push('public/login'));
+        dispatch(push('/public/login'));
     },
 };

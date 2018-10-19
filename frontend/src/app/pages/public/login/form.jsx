@@ -38,6 +38,7 @@ const LoginForm = ({ handleSubmit, submitting, error }) => (
             name="password"
             component={ TextField }
             placeholder="Password"
+            type="password"
             addon={ KeyIcon }
             disabled={ submitting }
             validate={

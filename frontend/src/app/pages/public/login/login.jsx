@@ -8,7 +8,6 @@ import { Card, CardBody } from 'reactstrap';
 
 import sessionActions from 'app/pages/private/session/redux/actions';
 import LoginForm from './form';
-import api from './api';
 
 class LoginPage extends React.PureComponent {
     constructor(props) {
@@ -22,17 +21,14 @@ class LoginPage extends React.PureComponent {
             actions,
         } = this.props;
 
-        return api.login({ username, password })
-            .then(({ token }) => {
-                actions.session.setToken(token);
-                actions.router.push('/servers');
-            })
-            .catch((error) => {
-                // TODO check error
-                throw new SubmissionError({
-                    _error: 'Invalid credentials',
-                });
+        if (username === 'vugle' && password === 'tieto') {
+            actions.session.setToken('___SUPER_SECRET_TOKEN___');
+            actions.router.push('/admin/dashboard');
+        } else {
+            throw new SubmissionError({
+                _error: 'Invalid credentials',
             });
+        }
     }
 
     render() {

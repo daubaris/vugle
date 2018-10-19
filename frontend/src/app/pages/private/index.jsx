@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import { push } from 'connected-react-router';
 import { Container } from 'reactstrap';
 
-import ServersPages from 'app/pages/private/servers/servers';
+import DashboardPage from 'app/pages/private/dashboard/dashboard';
 import sessionActions from 'app/pages/private/session/redux/actions';
 import { Button } from 'app/components/button';
 import { Header } from 'app/layout';
@@ -35,15 +35,15 @@ class PrivatePages extends React.PureComponent {
         return (
             <Container fluid>
                 <Header>
-                    <Logo size="small" />
+                    <h1>VUGLE</h1>
                     <Button
                         title="logout"
                         onClick={ this.onClickLogout }
                     />
                 </Header>
                 <Switch>
-                    <Route path="/servers" component={ ServersPages } />
-                    <Redirect to="/public/landing" />
+                    <Route exact path="/admin/dashboard" component={ DashboardPage } />
+                    <Redirect to="/admin/dashboard" />
                 </Switch>
             </Container>
         );

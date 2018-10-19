@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 import { push } from 'connected-react-router';
 
 import LoginPage from 'app/pages/public/login/login';
-import LandingPage from "app/pages/public/landing/landing";
+import LandingPage from 'app/pages/public/landing/landing';
 import { Logo } from 'app/components/logo';
 
 import styles from './index.scss';
@@ -17,7 +17,7 @@ class PublicPages extends React.Component {
         super(props);
 
         if (props.session.token) {
-            props.actions.router.push('/servers');
+            props.actions.router.push('/admin/dashboard');
         }
     }
 
@@ -34,9 +34,9 @@ class PublicPages extends React.Component {
                         >
                             <React.Fragment>
                                 <Switch>
-                                    <Route exact path="/public/login" component={ LoginPage } />
-									<Route exact path="/public/landing" component={ LandingPage } />
-                                    <Redirect to="/public/landing" />
+									<Route exact path="/public" component={ LandingPage } />
+									<Route exact path="/public/login" component={ LoginPage } />
+                                    <Redirect to="/public" />
                                 </Switch>
                             </React.Fragment>
                         </Col>
