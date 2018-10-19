@@ -19,7 +19,14 @@ namespace VugleBE.Controllers
             _context = context;
         }
         // PUT api/User
+        /// <summary>
+        /// Registers User in database
+        /// </summary>
+        /// <response code="201">User succesfully created in database</response>
+        /// <response code="400">User with current username already exists</response>      
         [HttpPut]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
         public IActionResult Register([FromBody]UserViewModel request)
         {
             if(_context.Users.FirstOrDefault(x => x.Username == request.Username.ToLower()) != null)
@@ -32,17 +39,24 @@ namespace VugleBE.Controllers
                Password = request.Password 
             });
             _context.SaveChanges();
-            return Ok();
+            return NoContent();
         }
         // Post api/User
+        /// <summary>
+        /// Checks if User exists in database
+        /// </summary>
+        /// <response code="204">User exist in database</response>
+        /// <response code="401">User does not exist in database</response>      
         [HttpPost]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(401)]
         public IActionResult Login([FromBody]UserViewModel request)
         {
             var user = _context.Users.FirstOrDefault(x => x.Username == request.Username.ToLower());
             
             if(user != null)
             {
-                return Ok();
+                return NoContent();
             }
             else
             {
