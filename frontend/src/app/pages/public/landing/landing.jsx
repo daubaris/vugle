@@ -1,5 +1,7 @@
 import React from 'react';
-import { Pane, Card, Strong } from 'evergreen-ui';
+import { Pane, Strong } from 'evergreen-ui';
+
+import Notifications from 'app/components/notifications/notifications';
 
 class LandingPage extends React.Component {
 	render() {
@@ -12,12 +14,15 @@ class LandingPage extends React.Component {
 		};
 
 		return (
-			<Pane
-				{...cardStyle}
-				elevation={ 1 }
-			>
-				<Strong size={ 600 }>vugle</Strong>
-			</Pane>
+		    <React.Fragment>
+                <Notifications />
+                <Pane
+                    {...cardStyle}
+                    elevation={ 1 }
+                >
+                    <Strong size={ 600 }>vugle</Strong>
+                </Pane>
+            </React.Fragment>
 		);
 	}
 }
