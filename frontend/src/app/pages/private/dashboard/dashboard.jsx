@@ -1,11 +1,13 @@
 import React from 'react';
 import { Alert } from 'reactstrap';
 
+import NotificationPage from '../notification/notification-page'
+
 class DashboardPage extends React.Component {
     static renderContent() {
         return (
             <div>
-                Missing data
+                <NotificationPage />
             </div>
         );
     }

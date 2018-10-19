@@ -6,7 +6,7 @@ import {
 
 class RestService {
     constructor() {
-        this.baseURL = 'http://playground.net';
+        this.baseURL = 'https://vugle-be.azurewebsites.net/';
         this.instance = axios.create({
             baseURL: this.baseURL,
         });
