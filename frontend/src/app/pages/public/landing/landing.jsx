@@ -25,7 +25,7 @@ class LandingPage extends React.Component {
                     {...cardStyle}
                     elevation={ 1 }
                 >
-                    <Strong size={ 600 }>vugle</Strong>
+                    <Strong color="#FF3400" size={ 600 }>vugle</Strong>
                 </Pane>
                 <Chat />
             </React.Fragment>
