@@ -14,16 +14,16 @@ class SuggestionBar extends React.Component {
         this.state = {
             suggestions: [{
                 id: 1,
-                title: 'test'
+                title: 'Pranešk'
             },{
                 id: 2,
-                title: 'test'
+                title: 'Sužinok'
             },{
                 id: 3,
-                title: 'test'
+                title: 'Pažink'
             },{
                 id: 4,
-                title: 'test'
+                title: 'Pramogauk'
             }]
         };
 
