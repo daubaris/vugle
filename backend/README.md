@@ -1,8 +1,8 @@
-How to start:
+How to start: 
 
-dotnet run
+`dotnet run` 
 
-or
+or 
 
-docker build . -t vuglebe
-docker run -d --name vuglebe -p 8080:80 vuglebe
+`docker build . -t vuglebe` 
+`docker run -d --name vuglebe -p 8080:80 vuglebe` 
