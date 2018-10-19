@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { SuggestionBar } from './suggestion-bar';
+import Messages from './messages/messages';
 
 import styles from './chat.scss';
 
@@ -9,11 +10,8 @@ class Chat extends React.Component {
         return (
             <div className={ styles['chat'] }>
                 <div className={ styles['char-area'] }>
-                    asdasd
-                    asdasd
-                    asdasd
-                    asdasd
-
+					<Messages type='user' message={ 'one two' }/>
+					<Messages message={ 'one two' }/>
                 </div>
                 <SuggestionBar />
             </div>

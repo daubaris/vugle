@@ -1,0 +1,25 @@
+.wrapper {
+  //width: 100%;
+  display: flex;
+  &.blue {
+    justify-content: flex-end;
+  }
+}
+
+.message-type-blue {
+  margin: 10px;
+  float: right;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.message-type-gray {
+  margin: 10px;
+  float: left;
+  background-color: lightgray;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+}
