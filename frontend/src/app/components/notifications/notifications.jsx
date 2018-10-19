@@ -2,17 +2,13 @@ import React from 'react';
 
 import pusher from 'app/services/pusher';
 
-import Notification from './notification';
+import { toaster } from 'evergreen-ui';
 
 class Notifications extends React.Component {
     constructor(props) {
         super(props);
 
         this.onGetNotification = this.onGetNotification.bind(this);
-
-        this.state = {
-            notifications: [],
-        };
     }
 
     componentDidMount() {
@@ -22,33 +18,48 @@ class Notifications extends React.Component {
     }
 
     onGetNotification(notification) {
-        const {
-            notifications,
-        } = this.state;
-
-        this.setState({
-            notifications: [
-                ...notifications,
-                notification,
-            ],
-        });
+        this.showToaster(notification);
     }
 
     render() {
-        const {
-            notifications,
-        } = this.state;
+        return null;
+    }
 
-        return (
-            <div>
-                { notifications.map(notification => (
-                    <Notification
-                        key={ notification.id }
-                        notification={ notification }
-                    />
-                )) }
-            </div>
-        );
+    showToaster(notification) {
+        switch (notification.type) {
+        case 'success':
+            toaster.success(
+                notification.title,
+                {
+                    description: notification.description,
+                }
+            );
+            break;
+        case 'warning':
+            toaster.warning(
+                notification.title,
+                {
+                    description: notification.description,
+                }
+            );
+            break;
+        case 'danger':
+            toaster.danger(
+                notification.title,
+                {
+                    description: notification.description,
+                }
+            );
+            break;
+        default:
+            toaster.notify(
+                notification.title,
+                {
+                    description: notification.description,
+                }
+            );
+            break;
+        }
     }
 }
 
