@@ -23,7 +23,7 @@ class Chat extends React.Component {
 
         actions.chat.beforeAddBotMessage();
         setTimeout(() => {
-            const titles = ['Sveiki!', 'Labas!', 'Labas, aš Vulge!'];
+            const titles = ['Sveiki!', 'Labas!', 'Labas, aš Vugle!'];
             actions.chat.addBotMessage({ title: titles });
             setTimeout(() => {
                 actions.chat.beforeAddBotMessage();
