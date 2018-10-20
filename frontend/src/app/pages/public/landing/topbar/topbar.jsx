@@ -18,7 +18,7 @@ class Topbar extends React.Component {
         return (
             <div className={ styles['topbar'] }>
                 <div className={ styles['title'] }>
-                    vugle
+                    vugle.
                 </div>
                 <div className={ styles['burger'] } onClick={ this.onClick }>
                     <div></div>

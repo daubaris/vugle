@@ -16,7 +16,7 @@ class Messages extends React.Component {
 			<div className={ wrapperClassname }>
 				{ type !== 'user' &&
 					<div className={ styles['avatar'] }>
-						<Icon size={30} icon="user"/>
+						🤖	
 					</div>
 				}
 				<div className={ styles['message-type-' + (type === 'user' ? 'blue' : 'gray')] }>

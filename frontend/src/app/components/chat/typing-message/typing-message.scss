@@ -6,17 +6,19 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  border-radius: 5px;
-  background-color: #E2E2E2;
   width: 64px;
   height: 38px;
+  padding: 10px;
+  border-radius: 15px;
+  border-bottom-left-radius: 0;
+  border: 1px solid #E2E2E2;
 }
 .lds-ellipsis div {
   position: absolute;
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #000;
+  background: #E2E2E2;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {

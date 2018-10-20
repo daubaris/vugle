@@ -10,6 +10,24 @@ import { TypingMessage } from "./typing-message";
 import styles from './chat.scss';
 import PollForm from './poll-form/poll-message-form';
 
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Maps message array and adds random emoji to the end of the sentence
+export function randomEmojiGenerator(message) {
+    const emojipedia = [' 🤟', ' ✌️', ' 🖖', ' 🙂', ' 👏', ' 💪', ' 😎', '', '', '', ''];
+
+    if(typeof message === 'object'){
+        return message.map(item => (
+            item + emojipedia[getRandomInt(0,10)]
+        ));
+    }
+
+    else return message + emojipedia[getRandomInt(0,10)];
+}
+
 class Chat extends React.Component {
     constructor(props) {
         super(props);
@@ -22,12 +40,12 @@ class Chat extends React.Component {
 
         actions.chat.beforeAddBotMessage();
         setTimeout(() => {
-            const titles = ['Sveiki!', 'Labas!', 'Labas, aš Vulge!'];
-            actions.chat.addBotMessage({ title: titles });
+            const titles = randomEmojiGenerator(['Sveiki!', 'Labas!', 'Labas, aš Vugle!']);
+            actions.chat.addBotMessage({ title: titles});
             setTimeout(() => {
                 actions.chat.beforeAddBotMessage();
                 setTimeout(() => {
-                    actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?' });
+                    actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?'});
                     actions.chat.setBotResponding(false);
                 }, 500);
             }, 300)

@@ -2,8 +2,15 @@
   cursor: pointer;
   padding: 10px;
   border-radius: 15px;
-  border: 1px solid #E2E2E2;
+  font-size: 12px;
+  color: white;
+  background-color: #00A0E3; 
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.33);
   &.disabled {
     background: rgba(gray, 0.1);
   }
+}
+
+.suggestions-bubble:hover {
+  opacity: 0.5;
 }
