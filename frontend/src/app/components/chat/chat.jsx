@@ -9,6 +9,7 @@ import { TypingMessage } from "./typing-message";
 
 import styles from './chat.scss';
 import PollForm from './poll-form/poll-message-form';
+import Poll from './poll-form/poll';
 
 class Chat extends React.Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class Chat extends React.Component {
 
         actions.chat.beforeAddBotMessage();
         setTimeout(() => {
-            const titles = ['Sveiki!', 'Labas!', 'Labas, aš Vulge!'];
+            const titles = ['Sveiki!', 'Labas!', 'Labas, aš Vugle!'];
             actions.chat.addBotMessage({ title: titles });
             setTimeout(() => {
                 actions.chat.beforeAddBotMessage();
@@ -54,7 +55,12 @@ class Chat extends React.Component {
                         />
                     ))}
                     { waitingForBotResponse && <TypingMessage/> }
+                  
                     <PollForm />
+
+                    <Poll
+                        id={1}
+                    />
                 </div>
                 <SuggestionBar loading={ botResponding } />
             </div>
