@@ -44,7 +44,7 @@ class SuggestionsBubble extends React.Component {
 		return (
 			<Pane
 				{...cardStyles}
-				elevation={ 1 }
+				// elevation={ 1 }
 				onClick={ this.onClick }
                 className={ className }
 			>
