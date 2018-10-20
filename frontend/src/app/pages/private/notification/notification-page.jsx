@@ -7,7 +7,6 @@ import { Container, Row, Col, Card, CardBody } from 'reactstrap';
 
 import sessionActions from 'app/pages/private/session/redux/actions';
 import NotificationForm from './notification-form';
-import restService from 'app/services/api';
 
 class NotificationPage extends React.PureComponent {
     constructor(props) {
@@ -22,11 +21,11 @@ class NotificationPage extends React.PureComponent {
         var headers = {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*"
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*"
         };
-        // "https://localhost:44316/api/pusher"
-        // "https://vugle-be.azurewebsites.net/api/pusher"
-        fetch("https://localhost:44316/api/pusher", {
+
+        fetch("https://vugle-be.azurewebsites.net/api/pusher", {
                 method: "POST",
                 headers: headers,
                 mode: 'cors',
