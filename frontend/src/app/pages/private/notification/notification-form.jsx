@@ -24,7 +24,7 @@ const NotificationForm = ({ handleSubmit, submitting, error }) => (
         <Field
             name="notificationTitle"
             component={ TextField }
-            placeholder="Antraštė"
+            placeholder="Title"
             disabled={ submitting }
             validate={
                 [
@@ -36,7 +36,7 @@ const NotificationForm = ({ handleSubmit, submitting, error }) => (
         <Field
             name="notificationText"
             component={ TextField }
-            placeholder="Aprašymas"
+            placeholder="Notification text"
             validate={
                 [
                     validations.required,

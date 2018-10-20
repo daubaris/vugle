@@ -7,7 +7,6 @@ import Messages from './messages/messages';
 import chatActions from './redux/actions';
 
 import styles from './chat.scss';
-import { TypingMessage } from './typing-message';
 import PollForm from './poll-form/poll-message-form';
 
 class Chat extends React.Component {
@@ -21,8 +20,18 @@ class Chat extends React.Component {
             actions,
         } = this.props;
 
-        actions.chat.addBotMessage({ title: 'Sveiki!' });
-        actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?' });
+        actions.chat.beforeAddBotMessage();
+        setTimeout(() => {
+            const titles = ['Sveiki!', 'Labas!', 'Labas, aš Vulge!'];
+            actions.chat.addBotMessage({ title: titles });
+            setTimeout(() => {
+                actions.chat.beforeAddBotMessage();
+                setTimeout(() => {
+                    actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?' });
+                    actions.chat.setBotResponding(false);
+                }, 500);
+            }, 300)
+        }, 750);
     }
 
     render() {
@@ -44,7 +53,6 @@ class Chat extends React.Component {
                     ))}
                     <PollForm />
                 </div>
-                <TypingMessage />
                 <SuggestionBar />
             </div>
         );
