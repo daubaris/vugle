@@ -69,7 +69,7 @@ class Chart extends React.Component {
       
       return (
           <React.Fragment>
-          <PieChart data={this.item.data} options={chartOptions}/>
+          <PieChart data={this.props.data} options={chartOptions}/>
               </React.Fragment>
       );
     }
