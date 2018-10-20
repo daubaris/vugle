@@ -1,0 +1,37 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &.blue {
+
+    justify-content: flex-end;
+  }
+
+  .avatar {
+    margin: 0 10px 0 16px;
+
+    .icon-user {
+      font-size: 40px;
+    }
+  }
+}
+
+.message-type-blue {
+  margin: 5px 10px 5px 10px;
+  float: right;
+  background-color: #00A0E3;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.message-type-gray {
+  font-size: 12px;
+  margin: 5px 10px 5px 10px;
+  float: left;
+  background-color: #E2E2E2;
+  color: #151515;
+  padding: 10px;
+  border-radius: 5px;
+}

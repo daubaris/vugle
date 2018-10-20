@@ -1,0 +1,12 @@
+.chat {
+  height: calc(100vh - 85px);
+
+  .char-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: calc(100vh - 111px);
+    overflow-y: scroll;
+  }
+}

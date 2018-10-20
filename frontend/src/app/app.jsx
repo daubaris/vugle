@@ -11,8 +11,8 @@ const App = () => (
     <div className={ styles['app'] }>
         <Switch>
             <Route path="/public" component={ PublicPages } />
-            <Route path="/" component={ PrivatePages } />
-            <Redirect to="/public/" />
+            <Route path="/admin" component={ PrivatePages } />
+            <Redirect to="/public" />
         </Switch>
     </div>
 );

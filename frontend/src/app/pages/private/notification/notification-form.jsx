@@ -5,27 +5,26 @@ import {
     Form,
     formPropTypes,
 } from 'redux-form';
-import { Alert } from 'reactstrap';
-import {
-    MdPerson as PersonIcon,
-    MdVpnKey as KeyIcon,
-} from 'react-icons/md';
 
 import {
     TextField,
     validations,
 } from 'app/components/inputs';
+
 import { Button } from 'app/components/button';
 
-const LoginForm = ({ handleSubmit, submitting, error }) => (
+import styles from './notification-page.scss';
+
+const NotificationForm = ({ handleSubmit, submitting, error }) => (
     <Form onSubmit={ handleSubmit }>
+        <h1>Sukurti naują pranešimą</h1>
+
         { error && <Alert color="danger">{ error }</Alert>}
 
         <Field
-            name="username"
+            name="notificationTitle"
             component={ TextField }
-            placeholder="Username"
-            addon={ PersonIcon }
+            placeholder="Antraštė"
             disabled={ submitting }
             validate={
                 [
@@ -35,33 +34,36 @@ const LoginForm = ({ handleSubmit, submitting, error }) => (
         />
 
         <Field
-            name="password"
+            name="notificationText"
             component={ TextField }
-            placeholder="Password"
-            type="password"
-            addon={ KeyIcon }
-            disabled={ submitting }
+            placeholder="Aprašymas"
             validate={
                 [
                     validations.required,
                 ]
             }
         />
+        <Field name="notificationType" component="select" className={ styles['dropdown'] }>
+            <option>Tipas</option>
+            <option value="success">Sėkingas</option>
+            <option value="warning">Įspėjimas</option>
+            <option value="danger">Pavojingas</option>
+            <option value="info">Informacinis</option>
+        </Field>
 
         <Button
-            title="login"
+            title="Sukurti"
             type="submit"
             size="lg"
-            disabled={ submitting }
             block
         />
     </Form>
 );
 
-LoginForm.propTypes = {
+NotificationForm.propTypes = {
     ...formPropTypes,
 };
 
 export default reduxForm({
-    form: 'login-form',
-})(LoginForm);
+    form: 'notification-form',
+})(NotificationForm);
