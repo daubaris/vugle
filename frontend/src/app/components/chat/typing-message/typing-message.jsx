@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './typing-message.scss';
-import { Icon } from "evergreen-ui";
 import classnames from "classnames";
 
 class TypingMessage extends React.Component {
@@ -12,7 +11,7 @@ class TypingMessage extends React.Component {
         return (
             <div className={ wrapperClassname }>
                 <div className={ styles['avatar'] }>
-                    <Icon size={30} icon="user"/>
+                    🤖
                 </div>
                 <div className={ styles['lds-ellipsis'] }>
                     <div></div>

@@ -60,6 +60,13 @@ class SuggestionBar extends React.Component {
         this.onClick = this.onClick.bind(this);
     }
 
+    componentDidMount() {
+        const {
+            actions,
+        } = this.props;
+
+        actions.chat.getSuggestions(1);
+    }
 
     onClick(suggestion) {
         const {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import pusher from 'app/services/pusher';
 
 import { SuggestionBar } from './suggestion-bar';
 import Messages from './messages/messages';
@@ -30,12 +31,18 @@ export function randomEmojiGenerator(message) {
 class Chat extends React.Component {
     constructor(props) {
         super(props);
+
+        this.onGetPoll = this.onGetPoll.bind(this);
     }
 
     componentDidMount() {
         const {
             actions,
         } = this.props;
+
+        const channel = pusher.subscribe('vugle-notifications');
+
+        channel.bind('new-poll', this.onGetPoll);
 
         actions.chat.beforeAddBotMessage();
         setTimeout(() => {
@@ -46,17 +53,24 @@ class Chat extends React.Component {
                 setTimeout(() => {
                     actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?'});
                     actions.chat.setBotResponding(false);
-                    actions.chat.addPollMessage(1);
                     actions.chat.addBotMessage({
                         title: 'test',
                         description: 'test description',
                         date: 'test date',
                         photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Google_Images_2015_logo.svg/1200px-Google_Images_2015_logo.svg.png',
-                        url: 'www.google.com'
+                        url: 'https://www.google.com'
                     });
                 }, 500);
             }, 300)
         }, 750);
+    }
+
+    onGetPoll(pollId) {
+        const {
+            actions,
+        } = this.props;
+
+        actions.chat.addPollMessage(pollId);
     }
 
     render() {
