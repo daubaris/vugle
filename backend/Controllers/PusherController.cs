@@ -1,13 +1,13 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using VugleBE.ViewModels;
-using PusherServer;
 using Microsoft.AspNetCore.Cors;
 using VugleBE.Context;
 using VugleBE.Context.Models;
 using System.Linq;
 using System.Collections.Generic;
 using System;
+using VugleBE.Services;
 
 namespace VugleBE.Controllers
 {
@@ -42,22 +42,7 @@ namespace VugleBE.Controllers
             _context.Add(notification);
             _context.SaveChanges();
 
-            var options = new PusherOptions
-            {
-                Cluster = "eu",
-                Encrypted = true
-            };
-
-            var pusher = new Pusher(
-              "626201",
-              "9336e0704072cd38e1db",
-              "8d7468d1ea158dc400b1",
-              options);
-
-            var result = await pusher.TriggerAsync(
-              "vugle-notifications",
-              "new-notification",
-              input);
+            await PusherService.SendNotification(input, "new-notification");
 
             return Ok();
         }
