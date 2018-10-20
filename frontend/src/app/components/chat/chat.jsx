@@ -20,8 +20,16 @@ class Chat extends React.Component {
             actions,
         } = this.props;
 
-        actions.chat.addBotMessage({ title: 'Sveiki!' }, Math.random() * 1000);
-        actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?' }, 300);
+        actions.chat.beforeAddBotMessage();
+        setTimeout(() => {
+            actions.chat.addBotMessage({ title: 'Sveiki!' });
+            setTimeout(() => {
+                actions.chat.beforeAddBotMessage();
+                setTimeout(() => {
+                    actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?' });
+                }, 500);
+            }, 300)
+        }, 750);
     }
 
     render() {
@@ -31,6 +39,8 @@ class Chat extends React.Component {
                 waitingForBotResponse,
             },
         } = this.props;
+
+        console.log(waitingForBotResponse, 'waitingForBotResponse');
 
         return (
             <div className={ styles['chat'] }>
@@ -43,7 +53,7 @@ class Chat extends React.Component {
                         />
                     ))}
                 </div>
-				<TypingMessage/>
+                { waitingForBotResponse && <TypingMessage/> }
                 <SuggestionBar />
             </div>
         );

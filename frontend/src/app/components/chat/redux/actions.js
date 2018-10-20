@@ -17,7 +17,28 @@ function getTimeout(suggestionsLength, index) {
         return 0;
     }
 
-    return Math.random() * 1000;
+    return Math.random() * 5000;
+}
+
+function sleep(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
+const pushMessages = (suggestions, counter, dispatch) => {
+    const suggestion = suggestions[counter];
+
+    return new Promise((resolve, reject) => {
+        if (suggestion) {
+            dispatch(actions.beforeAddBotMessage());
+            sleep(Math.random() * 1000)
+                .then(() => {
+                    dispatch(addBotMessage({ title: suggestion.title }));
+                    pushMessages(suggestions, counter + 1, dispatch);
+                });
+        } else  if (!suggestion) {
+            return resolve();
+        }
+    });
 }
 
 const addUserMessage = (suggestion) => (dispatch) => {
@@ -28,45 +49,24 @@ const addUserMessage = (suggestion) => (dispatch) => {
 
     dispatch(actions.addMessage(message));
 
-    const suggestionsLength = suggestion.responses.length;
-    let timeout = 0;
-
-    setTimeout(() => {
-        suggestion.responses.forEach((response, index) => {
-            timeout = getTimeout(suggestionsLength, index);
-
-            if (!response.random) {
-                dispatch(addBotMessage({ title: response.title }), timeout);
-            } else {
-                const showMessage = Math.random() > response.random;
-                if (showMessage) {
-                    dispatch(addBotMessage({ title: response.title }), timeout);
-                }
-            }
+    sleep(300)
+        .then(() => {
+            pushMessages(suggestion.responses, 0, dispatch);
         });
-    }, 300);
 };
 
-const addBotMessage = (suggestion, timeout = 0) => (dispatch) => {
+const addBotMessage = (suggestion) => (dispatch) => {
     const message = {
         type: 'bot',
         id: new Date().getTime(),
         message: suggestion.title,
     };
 
-    if (!timeout) {
-        dispatch(actions.addMessage(message));
-    } else {
-        dispatch(actions.beforeAddBotMessage());
-
-        setTimeout(() => {
-            dispatch(actions.afterAddBotMessage());
-            dispatch(actions.addMessage(message));
-        },timeout);
-    }
+    dispatch(actions.addMessage(message));
 };
 
 export default {
     addUserMessage,
     addBotMessage,
+    beforeAddBotMessage: actions.beforeAddBotMessage
 };
