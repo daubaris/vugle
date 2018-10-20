@@ -9,6 +9,7 @@ import { TypingMessage } from "./typing-message";
 
 import styles from './chat.scss';
 import PollForm from './poll-form/poll-message-form';
+import Poll from './poll-form/poll';
 
 class Chat extends React.Component {
     constructor(props) {
@@ -54,7 +55,10 @@ class Chat extends React.Component {
                         />
                     ))}
                     { waitingForBotResponse && <TypingMessage/> }
-                    {/*<PollForm />*/}
+                    {/* <PollForm /> */}
+                    <Poll
+                        id={1}
+                    />
                 </div>
                 <SuggestionBar loading={ botResponding } />
             </div>
