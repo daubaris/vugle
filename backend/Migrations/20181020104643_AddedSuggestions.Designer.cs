@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VugleBE.Context;
 
 namespace VugleBE.Migrations
 {
     [DbContext(typeof(VugleContext))]
-    partial class VugleContextModelSnapshot : ModelSnapshot
+    [Migration("20181020104643_AddedSuggestions")]
+    partial class AddedSuggestions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,26 +34,6 @@ namespace VugleBE.Migrations
                     b.HasIndex("SuggestionId");
 
                     b.ToTable("KeywordSuggestions");
-                });
-
-            modelBuilder.Entity("VugleBE.Context.Models.Notification", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("Date");
-
-                    b.Property<string>("Description");
-
-                    b.Property<string>("Title");
-
-                    b.Property<string>("Type");
-
-                    b.Property<string>("Url");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("VugleBE.Context.Models.Option", b =>

@@ -10,6 +10,6 @@ namespace VugleBE.Context.Models
         public string Description { get; set; }
         public DateTimeOffset Date { get; set; }
         public ICollection<Option> Options { get; set; }
-        public virtual ICollection<PollResponse> PollResponses {get;set;}
+        public virtual ICollection<PollResponse> PollResponses { get; set; }
     }
 }
