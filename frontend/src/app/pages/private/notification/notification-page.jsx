@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { push } from 'connected-react-router';
 import { Container, Row, Col, Card, CardBody } from 'reactstrap';
-import restService from 'app/services/api';
 
 import sessionActions from 'app/pages/private/session/redux/actions';
 import NotificationForm from './notification-form';
+import restService from 'app/services/api';
 
 class NotificationPage extends React.PureComponent {
     constructor(props) {
