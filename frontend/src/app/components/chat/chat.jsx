@@ -55,7 +55,9 @@ class Chat extends React.Component {
                         />
                     ))}
                     { waitingForBotResponse && <TypingMessage/> }
-                    {/* <PollForm /> */}
+                  
+                    <PollForm />
+
                     <Poll
                         id={1}
                     />
