@@ -3,6 +3,7 @@ import React from 'react';
 class Chart extends React.Component {
     constructor(props) {
         super(props);
+
     }
 
     render() {
@@ -61,7 +62,7 @@ class Chart extends React.Component {
       
       return (
           <React.Fragment>
-          <PieChart data={chartData} options={chartOptions}/>
+          <PieChart data={this.props.data} options={chartOptions}/>
               </React.Fragment>
       );
     }

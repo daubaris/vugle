@@ -24,7 +24,7 @@ class SuggestionBar extends React.Component {
                         },
                         {
                             title: 'Ką norėtum pranešti?'
-                        }
+                        },
                     ]
                 },
                 {

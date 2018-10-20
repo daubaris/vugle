@@ -5,6 +5,7 @@ import {
     BEFORE_ADD_BOT_MESSAGE,
     AFTER_ADD_BOT_MESSAGE,
     SET_BOT_RESPONDING,
+    ADD_POLL_MESSAGE,
 } from './actions';
 
 export function getInitialState() {
@@ -37,5 +38,5 @@ export default handleActions({
     [SET_BOT_RESPONDING]: (state, { payload }) => ({
         ...state,
         botResponding: payload,
-    })
+    }),
 }, getInitialState());

@@ -8,7 +8,6 @@ import chatActions from './redux/actions';
 import { TypingMessage } from "./typing-message";
 
 import styles from './chat.scss';
-import PollForm from './poll-form/poll-message-form';
 
 
 function getRandomInt(min, max) {
@@ -47,6 +46,7 @@ class Chat extends React.Component {
                 setTimeout(() => {
                     actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?'});
                     actions.chat.setBotResponding(false);
+                    actions.chat.addPollMessage(1);
                 }, 500);
             }, 300)
         }, 750);
@@ -69,10 +69,10 @@ class Chat extends React.Component {
                             key={ message.id }
                             type={ message.type }
                             message={ message.message }
+                            allMessage={ message }
                         />
                     ))}
                     { waitingForBotResponse && <TypingMessage/> }
-                    {/*<PollForm />*/}
                 </div>
                 <SuggestionBar loading={ botResponding } />
             </div>
