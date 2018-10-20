@@ -17,7 +17,7 @@ class SuggestionsBubble extends React.Component {
 			borderRadius: 3,
 			padding: 10,
 			margin: 5,
-			whiteSpace: 'nowrap'
+			whiteSpace: 'nowrap',
 		};
 
 		const {
