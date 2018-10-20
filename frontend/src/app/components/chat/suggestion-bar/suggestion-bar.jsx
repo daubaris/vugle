@@ -65,7 +65,7 @@ class SuggestionBar extends React.Component {
             actions,
         } = this.props;
 
-        actions.chat.getSuggestions(1);
+        actions.chat.getSuggestions(0);
     }
 
     onClick(suggestion) {
@@ -78,16 +78,13 @@ class SuggestionBar extends React.Component {
 
     render() {
 		const {
-            suggestions,
-		} = this.state;
-
-		const {
 		    loading,
+            chat,
         } = this.props;
 
 		return (
 			<div className={ styles['suggestion-bar'] }>
-				{ suggestions.map(suggestion => (
+				{ chat.suggestions.suggestions.map(suggestion => (
 					<SuggestionsBubble
 						key={ suggestion.id }
                         suggestion={ suggestion }
