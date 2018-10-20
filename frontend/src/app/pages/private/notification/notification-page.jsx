@@ -35,7 +35,7 @@ class NotificationPage extends React.PureComponent {
         //     })
         // })
 
-        restService.post('https://vugle-be.azurewebsites.net/api/pusher', {
+        restService.post('api/pusher', {
             "title": values.notificationTitle,
             "description": values.notificationText,
             "type": values.notificationType,
