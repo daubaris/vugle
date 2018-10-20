@@ -9,6 +9,12 @@ class RestService {
         this.baseURL = 'https://vugle-be.azurewebsites.net/';
         this.instance = axios.create({
             baseURL: this.baseURL,
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'test',
+                'X-Test': 'testing'
+            }
         });
 
         this.instance.interceptors.response.use((response) => {

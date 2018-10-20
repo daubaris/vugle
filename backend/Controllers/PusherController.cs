@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using VugleBE.ViewModels;
 using PusherServer;
+using Microsoft.AspNetCore.Cors;
 
 namespace VugleBE.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowSpecificOrigin")]
     public class PusherController : Controller
     {
         /// <summary>
@@ -16,6 +18,7 @@ namespace VugleBE.Controllers
         /// <returns></returns>
         /// <response code="200">Notification succesfully sent</response>
         [HttpPost]
+        [EnableCors("AllowSpecificOrigin")]
         public async Task<ActionResult> PushNotification([FromBody] NotificationViewModel input)
         {
             var options = new PusherOptions

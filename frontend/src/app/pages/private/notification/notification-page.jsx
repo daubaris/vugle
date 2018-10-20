@@ -18,7 +18,24 @@ class NotificationPage extends React.PureComponent {
 
     onSubmitNotification(values) {
         console.log(values);
-        restService.post('/sendNotification', values);
+        console.log('gg', JSON.stringify(values));
+        var headers = {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*"
+        };
+        // "https://localhost:44316/api/pusher"
+        // "https://vugle-be.azurewebsites.net/api/pusher"
+        fetch("https://localhost:44316/api/pusher", {
+                method: "POST",
+                headers: headers,
+                mode: 'cors',
+                body: JSON.stringify({
+                    "title": values.notificationTitle,
+                    "description": values.notificationText,
+                    "type": values.notificationType,
+                })
+            });
     }
 
     render() {
