@@ -40,42 +40,10 @@ class PollForm extends React.Component {
 
     render() {
         const {
-            type,
-            message,
+					type,
+					message,
+					poll,
         } = this.props;
-
-        const poll = {
-            "id": 0,
-            "title": "AXUJENAAAS POLLAS",
-            "description": "pollas apie hakatono maista.... Lorem ea sit officia id. Velit non labore Lorem excepteur. Deserunt minim occaecat ex aliquip mollit aliqua. Ut consectetur ipsum irure non duis esse reprehenderit ullamco mollit. Reprehenderit labore aliquip id nulla nostrud est magna exercitation sit id.",
-            "date": "2018-10-20T12:00:27.589Z",
-            "options": [
-                {
-                    "title": "011111111",
-                    "value": "01"
-                },
-                {
-                    "title": "01232",
-                    "value": "02"
-                },
-                {
-                    "title": "03asd",
-                    "value": "03"
-                },
-                {
-                    "title": "04asd",
-                    "value": "04"
-                },
-                {
-                    "title": "zzzzz",
-                    "value": "08"
-                },
-                {
-                    "title": "xxxxxx",
-                    "value": "09"
-                }
-            ]
-        };
 
         const wrapperClassname = classnames(styles['wrapper'], type === 'user' ? styles['blue'] : styles['gray']);
 

@@ -7,6 +7,11 @@ import PollForm from './poll-message-form';
 class Poll extends React.Component {
     constructor(props){
         super(props);
+
+        this.state= {
+            poll: [],
+            isLoading: true,
+        };
     }
 
     componentDidMount(){
@@ -14,14 +19,27 @@ class Poll extends React.Component {
             id,
         } = this.props;
 
-        console.log(id);
-        restService.get(`/api/Poll/${id}`);
+        restService.get(`/api/Poll/${id}`).then((poll) => {
+            this.setState({
+                poll,
+                isLoading: false,
+            });
+        });
+        
     }
 
 
     render() {
+        const {
+            poll,
+            isLoading,
+        } = this.state;
+
         return (
-            <PollForm/>
+            !isLoading &&
+                <PollForm 
+                    poll={poll}
+                />
         );
     }
 }
