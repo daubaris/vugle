@@ -10,6 +10,6 @@ namespace VugleBE.Context.Models
         public int PollId { get; set; }
         public User User { get; set; }
         public Guid? UserId { get; set; }
-        public string Response {get;set;}
+        public string Response { get; set; }
     }
 }
