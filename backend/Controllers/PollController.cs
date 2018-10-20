@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using VugleBE.Context;
@@ -12,6 +13,7 @@ namespace VugleBE.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowSpecificOrigin")]
     public class PollController : ControllerBase
     {
         private readonly VugleContext _context;
@@ -26,6 +28,7 @@ namespace VugleBE.Controllers
         /// <response code="200">Polls are returned</response>
         [HttpGet("All")]
         [ProducesResponseType(200)]
+        [EnableCors("AllowSpecificOrigin")]
         public ActionResult<IEnumerable<PollViewModel>> GetAllPolls()
         {
             var polls = _context.Polls.Include(x => x.Options);
@@ -52,6 +55,7 @@ namespace VugleBE.Controllers
         /// <response code="200">Polls are returned</response>
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
+        [EnableCors("AllowSpecificOrigin")]
         public ActionResult<PollViewModel> GetPoll(int id)
         {
             var poll = _context.Polls.Include(x => x.Options).FirstOrDefault(x => x.Id == id);
@@ -77,6 +81,7 @@ namespace VugleBE.Controllers
         /// <response code="200">Poll has been created</response>
         [ProducesResponseType(200)]
         [HttpPut]
+        [EnableCors("AllowSpecificOrigin")]
         public IActionResult AddNewPoll([FromBody]PollViewModel request)
         {
             var poll = new Poll
@@ -100,6 +105,7 @@ namespace VugleBE.Controllers
         /// <response code="204">Poll response has been created</response>
         [ProducesResponseType(204)]
         [HttpPost("Response")]
+        [EnableCors("AllowSpecificOrigin")]
         public IActionResult SendResponse([FromBody]PollResponseViewModel request)
         {
             var pollResponse = new PollResponse
