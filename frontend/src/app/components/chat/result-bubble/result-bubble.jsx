@@ -4,28 +4,32 @@ import styles from './result-bubble.scss';
 class ResultBubble extends React.Component {
 	render() {
 		const {
-			items
+			item,
 		} = this.props;
 
+		if (!item || !item.url) {
+			return null;
+		}
+
 		return (
-				<div className={ styles['result-bubble'] }>
-					<div className={ styles['image-wrap'] }>
-					<div
-						className={ styles['image'] }
-						style={{
-							backgroundRepeat: "no-repeat",
-							background: "url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Google_Images_2015_logo.svg/1200px-Google_Images_2015_logo.svg.png) no-repeat",
-							backgroundPosition: "center center",
-							backgroundSize: "contain"
-						}}
-					/>
-					</div>
-					<div className={ styles['title'] }>
-						<a href="">test</a>
-					</div>
-					<div className={ styles['description']}>test description</div>
-					<div className={ styles['date'] }>test date</div>
+			<div className={ styles['result-bubble'] }>
+				<div className={ styles['image-wrap'] }>
+				<div
+					className={ styles['image'] }
+					style={{
+						backgroundRepeat: "no-repeat",
+						background: `url(${item.photo}) no-repeat`,
+						backgroundPosition: "center center",
+						backgroundSize: "contain"
+					}}
+				/>
 				</div>
+				<div className={ styles['title'] }>
+					<a href={item.url}>{item.title}</a>
+				</div>
+				<div className={ styles['description']}>{ item.description }</div>
+				<div className={ styles['date'] }>{ item.date }</div>
+			</div>
 		);
 	}
 }

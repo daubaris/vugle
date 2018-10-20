@@ -87,7 +87,7 @@ class PollForm extends React.Component {
                     >
                         {({state, setState}) => (
                             <RadioGroup
-                                marginTop={40}
+                                marginTop={20}
                                 size={16}
                                 label="Pasirinkimai"
                                 value={state.value}

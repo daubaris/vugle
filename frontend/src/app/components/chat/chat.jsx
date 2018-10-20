@@ -47,6 +47,13 @@ class Chat extends React.Component {
                     actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?'});
                     actions.chat.setBotResponding(false);
                     actions.chat.addPollMessage(1);
+                    actions.chat.addBotMessage({
+                        title: 'test',
+                        description: 'test description',
+                        date: 'test date',
+                        photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Google_Images_2015_logo.svg/1200px-Google_Images_2015_logo.svg.png',
+                        url: 'www.google.com'
+                    });
                 }, 500);
             }, 300)
         }, 750);

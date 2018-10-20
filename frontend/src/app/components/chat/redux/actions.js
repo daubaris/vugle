@@ -78,17 +78,27 @@ const addUserMessage = (suggestion) => (dispatch) => {
 };
 
 const addBotMessage = (suggestion) => (dispatch) => {
-    const messageTitle = Array.isArray(suggestion.title)
-        ? suggestion.title[getRandomInt(0, suggestion.title.length - 1)]
-        : suggestion.title;
+    if (suggestion.url) {
+        const message = {
+            type: 'bot',
+            id: new Date().getTime(),
+            data: suggestion,
+        };
 
-    const message = {
-        type: 'bot',
-        id: new Date().getTime(),
-        message: messageTitle,
-    };
+        dispatch(actions.addMessage(message));
+    } else {
+        const messageTitle = Array.isArray(suggestion.title)
+            ? suggestion.title[getRandomInt(0, suggestion.title.length - 1)]
+            : suggestion.title;
 
-    dispatch(actions.addMessage(message));
+        const message = {
+            type: 'bot',
+            id: new Date().getTime(),
+            message: messageTitle,
+        };
+
+        dispatch(actions.addMessage(message));
+    }
 };
 
 const addPollMessage = (id) => (dispatch) => {
