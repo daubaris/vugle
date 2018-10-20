@@ -46,13 +46,29 @@ namespace VugleBE.Controllers
         /// <summary>
         /// Get Suggestions by keyword
         /// </summary>
-        /// <param name="keyword">Suggestion keyword</param>
+        /// <param name="search">Suggestion keyword</param>
         /// <returns>First two layers of suggestions</returns>
         /// <response code="200">Suggestions with provided keywords are returned</response>
-        [HttpGet("keyword/{keyword}")]
-        public ActionResult<IEnumerable<SuggestionViewModel>> Get(string keyword)
+        [HttpGet("search/{search}")]
+        public ActionResult<IEnumerable<SuggestionViewModel>> Get(string search)
         {
-            var keywordDb = _context.SuggestionKeywords.Include(x=>x.KeywordSuggestions).OrderBy(x => LevenshteinDistance.Compute(x.Keyword,keyword)).FirstOrDefault();
+            var keywords = search.Split(" ").Reverse();
+            var distance = int.MaxValue;
+            SuggestionKeyword keywordDb = null;
+            foreach(var keyword in keywords)
+            {
+                var tempKeyword = _context.SuggestionKeywords.Include(x=>x.KeywordSuggestions).OrderBy(x => LevenshteinDistance.Compute(x.Keyword,keyword)).FirstOrDefault();
+                var tempDistance = LevenshteinDistance.Compute(tempKeyword.Keyword, keyword); 
+                if(tempDistance < distance)
+                {
+                    distance = tempDistance;
+                    keywordDb = tempKeyword;
+                }
+            }
+            if(keywordDb == null)
+            {
+                return null;
+            }
             var suggestions = _context.Suggestions.Include(x=>x.KeywordSuggestions).Where(x=>keywordDb.KeywordSuggestions.Any(y => x.Id == y.SuggestionId));
             var result = suggestions.Select(x => new SuggestionViewModel
             {
