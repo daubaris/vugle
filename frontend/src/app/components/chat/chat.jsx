@@ -22,7 +22,7 @@ class Chat extends React.Component {
 
         actions.chat.beforeAddBotMessage();
         setTimeout(() => {
-            const titles = ['Sveiki!', 'Labas!', 'Labas, aš Vulge!'];
+            const titles = ['Sveiki!', 'Labas!', 'Labas, aš Vugle!'];
             actions.chat.addBotMessage({ title: titles });
             setTimeout(() => {
                 actions.chat.beforeAddBotMessage();
@@ -54,7 +54,7 @@ class Chat extends React.Component {
                         />
                     ))}
                     { waitingForBotResponse && <TypingMessage/> }
-                    {/*<PollForm />*/}
+                    <PollForm />
                 </div>
                 <SuggestionBar loading={ botResponding } />
             </div>

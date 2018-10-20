@@ -4,6 +4,7 @@ import Component from "@reactions/component";
 
 import { Icon, RadioGroup } from 'evergreen-ui';
 
+import { Button } from 'app/components/button';
 import styles from './poll-form.scss';
 import chatStyles from '../messages/messages.scss';
 
@@ -66,7 +67,7 @@ class PollForm extends React.Component {
 						>
 						{({ state, setState }) => (
 							<RadioGroup
-								marginTop={40}
+								marginTop={20}
 								size={16}
 								label="Pasirinkimai"
 								value={state.value}
@@ -76,6 +77,10 @@ class PollForm extends React.Component {
 							/>
 						)}
 					</Component>
+
+					<Button
+						title="Atsakyti!"
+					/>
 				</div>
 			</div>
 		);

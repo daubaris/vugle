@@ -18,11 +18,18 @@ class SuggestionBar extends React.Component {
                     title: 'Noriu pranešti',
                     responses: [
                         {
-                            title: 'Pranešti?',
+                            title: ['Pranešti?', 'Kas nutiko?'],
                             random: 0.5,
                         },
                         {
                             title: 'Ką norėtum pranešti?'
+                        },
+                        {
+                            title: 'title',
+                            date: '2018-04-13',
+                            description: 'text',
+                            photo: '123',
+                            url: 'www.vilnius.lt'
                         }
                     ]
                 },
