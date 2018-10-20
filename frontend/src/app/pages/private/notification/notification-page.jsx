@@ -8,6 +8,7 @@ import { Container, Row, Col, Card, CardBody } from 'reactstrap';
 import sessionActions from 'app/pages/private/session/redux/actions';
 import NotificationForm from './notification-form';
 import restService from 'app/services/api';
+import PollForm from '../poll/poll-form';
 
 class NotificationPage extends React.PureComponent {
     constructor(props) {
@@ -22,6 +23,10 @@ class NotificationPage extends React.PureComponent {
             "description": values.notificationText,
             "type": values.notificationType,
         })
+    }
+
+    onSubmitPoll(values) {
+        restService.put('/Api/Poll', values);
     }
 
     render() {
@@ -40,7 +45,9 @@ class NotificationPage extends React.PureComponent {
                     <Col lg={{ size: 6 }}>
                         <Card>
                             <CardBody>
-                                Poll form
+                                <PollForm
+                                    onSubmit={ this.onSubmitPoll }
+                                />
                             </CardBody>
                         </Card>
                     </Col>

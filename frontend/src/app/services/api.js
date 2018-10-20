@@ -58,6 +58,10 @@ class RestService {
         return this.instance.post(url, data, this.getConfigs(configs));
     }
 
+    put(url, data, configs) {
+        return this.instance.put(url, data, this.getConfigs(configs));
+    }
+
     // TODO implement put and delete methods
 
     cancelRequest(source, message = 'No message') {

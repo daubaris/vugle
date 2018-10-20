@@ -7,7 +7,6 @@ import Messages from './messages/messages';
 import chatActions from './redux/actions';
 
 import styles from './chat.scss';
-import { TypingMessage } from "./typing-message";
 
 class Chat extends React.Component {
     constructor(props) {
@@ -38,14 +37,12 @@ class Chat extends React.Component {
         const {
             chat: {
                 messages,
-                waitingForBotResponse,
-                botResponding,
             },
         } = this.props;
 
         return (
             <div className={ styles['chat'] }>
-                <div className={ styles['char-area'] } id="chart-area">
+                <div className={ styles['char-area'] }>
                     { messages.map(message => (
                         <Messages
                             key={ message.id }
@@ -53,9 +50,8 @@ class Chat extends React.Component {
                             message={ message.message }
                         />
                     ))}
-                { waitingForBotResponse && <TypingMessage/> }
                 </div>
-                <SuggestionBar loading={ botResponding } />
+                <SuggestionBar />
             </div>
         );
     }
