@@ -54,7 +54,7 @@ class Chat extends React.Component {
                         />
                     ))}
                     { waitingForBotResponse && <TypingMessage/> }
-                    {/*<PollForm />*/}
+                    <PollForm />
                 </div>
                 <SuggestionBar loading={ botResponding } />
             </div>
