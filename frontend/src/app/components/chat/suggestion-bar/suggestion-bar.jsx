@@ -24,13 +24,6 @@ class SuggestionBar extends React.Component {
                         {
                             title: 'Ką norėtum pranešti?'
                         },
-                        {
-                            title: 'title',
-                            date: '2018-04-13',
-                            description: 'text',
-                            photo: '123',
-                            url: 'www.vilnius.lt'
-                        }
                     ]
                 },
                 {
