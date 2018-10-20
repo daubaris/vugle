@@ -39,8 +39,13 @@ class RestService {
 
         return {
             ...configs,
+            method: 'HEAD',
+            mode: 'no-cors',
             headers: {
-                Authorization: session.token,
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Headers": "*",
+                "Access-Control-Allow-Methods": "*"
             },
         };
     }
@@ -51,6 +56,10 @@ class RestService {
 
     post(url, data, configs) {
         return this.instance.post(url, data, this.getConfigs(configs));
+    }
+
+    put(url, data, configs) {
+        return this.instance.put(url, data, this.getConfigs(configs));
     }
 
     // TODO implement put and delete methods

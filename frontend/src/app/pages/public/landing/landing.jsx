@@ -1,32 +1,15 @@
 import React from 'react';
-import { Pane, Strong } from 'evergreen-ui';
 
 import Notifications from 'app/components/notifications/notifications';
 import Chat from 'app/components/chat/chat';
+import Topbar from "./topbar/topbar";
 
 class LandingPage extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
-		const cardStyle = {
-			margin: 0,
-			height: 55,
-			display: 'flex',
-			justifyContent: 'center',
-			alignItems: 'center'
-		};
-
 		return (
 		    <React.Fragment>
+                <Topbar/>
                 <Notifications />
-                <Pane
-                    {...cardStyle}
-                    elevation={ 1 }
-                >
-                    <Strong color="#FF3400" size={ 600 }>vugle</Strong>
-                </Pane>
                 <Chat />
             </React.Fragment>
 		);

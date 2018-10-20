@@ -1,0 +1,17 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &.blue {
+    justify-content: flex-end;
+  }
+
+  .avatar {
+    margin: 0 10px 0 16px;
+
+    .icon-user {
+      font-size: 40px;
+    }
+  }
+}
