@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { push } from 'connected-react-router';
 import { Container, Row, Col, Card, CardBody } from 'reactstrap';
+import restService from 'app/services/api';
 
 import sessionActions from 'app/pages/private/session/redux/actions';
 import NotificationForm from './notification-form';
@@ -17,24 +18,7 @@ class NotificationPage extends React.PureComponent {
 
     onSubmitNotification(values) {
         console.log(values);
-        console.log('gg', JSON.stringify(values));
-        var headers = {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Methods": "*"
-        };
-
-        fetch("https://vugle-be.azurewebsites.net/api/pusher", {
-                method: "POST",
-                headers: headers,
-                mode: 'cors',
-                body: JSON.stringify({
-                    "title": values.notificationTitle,
-                    "description": values.notificationText,
-                    "type": values.notificationType,
-                })
-            });
+        restService.post('/sendNotification', values);
     }
 
     render() {
