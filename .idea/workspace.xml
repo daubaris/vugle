@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7289b376-566b-4cb5-8805-884063bc2f04" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/layout/header/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/layout/header/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/private/notification/notification-form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/private/notification/notification-form.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/private/notification/notification-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/private/notification/notification-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/api.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,7 +28,7 @@
         <counts>
           <entry key="gitignore" value="2" />
           <entry key="html" value="3" />
-          <entry key="js" value="15" />
+          <entry key="js" value="16" />
           <entry key="jsx" value="36" />
           <entry key="scss" value="7" />
           <entry key="ts" value="1" />
@@ -39,7 +38,7 @@
         <counts>
           <entry key="HTML" value="3" />
           <entry key="JSX Harmony" value="36" />
-          <entry key="JavaScript" value="15" />
+          <entry key="JavaScript" value="16" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="SCSS" value="7" />
           <entry key="TypeScript" value="1" />
@@ -49,16 +48,16 @@
         <counts>
           <entry key="gitignore" value="3" />
           <entry key="html" value="9" />
-          <entry key="js" value="556" />
-          <entry key="jsx" value="2807" />
+          <entry key="js" value="557" />
+          <entry key="jsx" value="2886" />
           <entry key="scss" value="208" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="9" />
-          <entry key="JSX Harmony" value="2807" />
-          <entry key="JavaScript" value="556" />
+          <entry key="JSX Harmony" value="2886" />
+          <entry key="JavaScript" value="557" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="SCSS" value="208" />
         </counts>
@@ -78,8 +77,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/frontend/src/app/components/chat/suggestion-bar/suggestion-bar.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="544">
-                  <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+                <state relative-caret-position="136">
+                  <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -88,46 +87,22 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/src/app/components/notifications/notifications.jsx">
+            <entry file="file://$PROJECT_DIR$/frontend/src/app/components/chat/redux/reducer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="184">
-                  <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+                <state relative-caret-position="276">
+                  <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
                   <folding>
-                    <element signature="e#0#26#0" expanded="true" />
+                    <element signature="e#0#46#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/private/notification/notification-form.jsx">
+            <entry file="file://$PROJECT_DIR$/frontend/src/app/components/chat/chat.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="488">
-                  <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/private/notification/notification-page.jsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="714">
-                  <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/private/dashboard/dashboard.jsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="92">
-                  <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+                <state relative-caret-position="233">
+                  <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -136,10 +111,13 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/frontend/src/app/layout/header/header.scss">
+            <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/private/notification/notification-page.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="207">
-                  <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+                <state relative-caret-position="728">
+                  <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -147,15 +125,21 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/frontend/src/app/components/chat/chat.jsx">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/frontend/src/app/components/chat/redux/actions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="362">
-                  <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="475">
+                  <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/frontend/src/app/services/api.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-221">
+                  <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
@@ -178,6 +162,7 @@
       <find>notifications</find>
       <find>actionCreat</find>
       <find>classnames</find>
+      <find>fetch</find>
     </findStrings>
     <replaceStrings>
       <replace>/admin/login</replace>
@@ -219,8 +204,9 @@
         <option value="$PROJECT_DIR$/frontend/src/index.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/chat/chat.jsx" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/private/notification/notification-form.jsx" />
-        <option value="$PROJECT_DIR$/frontend/src/app/pages/private/notification/notification-page.jsx" />
         <option value="$PROJECT_DIR$/frontend/src/app/layout/header/header.scss" />
+        <option value="$PROJECT_DIR$/frontend/src/app/services/api.js" />
+        <option value="$PROJECT_DIR$/frontend/src/app/pages/private/notification/notification-page.jsx" />
       </list>
     </option>
   </component>
@@ -248,7 +234,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,7 +265,7 @@
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vugle" type="b2602c69:ProjectViewProjectNode" />
@@ -288,73 +273,17 @@
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vugle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vugle" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vugle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vugle" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="private" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vugle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vugle" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="private" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vugle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vugle" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="private" type="462c0819:PsiDirectoryNode" />
-              <item name="notification" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vugle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vugle" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="private" type="462c0819:PsiDirectoryNode" />
-              <item name="session" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vugle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vugle" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="notifica&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/notifications/notifications.jsx&#10;chat&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/chat/chat.jsx&#10;inde&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/index.html&#10;cha&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/chat/chat.scss&#10;noti&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/notifications/notifications.jsx&#10;messag&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/chat/messages/messages.jsx&#10;action&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/chat/redux/actions.js&#10;sugges&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/chat/suggestion-bar/suggestion-bar.jsx&#10;suggest&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/chat/suggestion-bar/suggestion-bar.jsx&#10;reducers&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/reducers.js&#10;reducer&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/chat/redux/reducer.js&#10;store&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/store.js&#10;la&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/pages/public/landing/landing.jsx&#10;dashb&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/pages/private/dashboard/dashboard.jsx&#10;DashboardPage&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="resSer&#9;null&#9;null&#10;notifica&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/notifications/notifications.jsx&#10;chat&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/chat/chat.jsx&#10;inde&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/index.html&#10;cha&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/chat/chat.scss&#10;noti&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/notifications/notifications.jsx&#10;messag&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/chat/messages/messages.jsx&#10;action&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/chat/redux/actions.js&#10;sugges&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/chat/suggestion-bar/suggestion-bar.jsx&#10;suggest&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/chat/suggestion-bar/suggestion-bar.jsx&#10;reducers&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/reducers.js&#10;reducer&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/components/chat/redux/reducer.js&#10;store&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/store.js&#10;la&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/pages/public/landing/landing.jsx&#10;dashb&#9;FILE&#9;file:///Users/maciedei/projects/vugle/frontend/src/app/pages/private/dashboard/dashboard.jsx&#10;DashboardPage&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -400,7 +329,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10501000" />
+    <option name="totallyTimeSpent" value="10759000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
@@ -514,9 +443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -561,10 +487,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-            <element signature="e#395#437#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -599,9 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -617,8 +536,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/components/chat/redux/reducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        <state relative-caret-position="276">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
           </folding>
@@ -634,23 +553,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/notifications/notification.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="51" lean-forward="true" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/chat/redux/actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/notifications/notification.jsx" />
     <entry file="file://$PROJECT_DIR$/frontend/src/app/components/chat/messages/messages.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -674,8 +577,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/components/chat/chat.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
+        <state relative-caret-position="233">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -684,8 +587,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/components/chat/suggestion-bar/suggestion-bar.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        <state relative-caret-position="136">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -696,9 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -706,16 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="488">
           <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/private/notification/notification-page.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -736,6 +626,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/chat/redux/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/services/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/private/notification/notification-page.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
