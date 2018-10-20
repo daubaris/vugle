@@ -18,7 +18,7 @@ class NotificationPage extends React.PureComponent {
 
     onSubmitNotification(values) {
         console.log(values);
-        restService.post('/sendNotification', values);
+        restService.post('/api/pusher', values);
     }
 
     render() {
