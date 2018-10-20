@@ -12,7 +12,7 @@ class LandingPage extends React.Component {
 	render() {
 		const cardStyle = {
 			margin: 0,
-			height: 70,
+			height: 55,
 			display: 'flex',
 			justifyContent: 'center',
 			alignItems: 'center'

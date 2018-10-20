@@ -1,0 +1,90 @@
+{
+  "result": [
+    {
+      "keyword": "Pranešk",
+      "children": [
+        {
+          "keyword": "Skundas",
+          "url": "https://paslaugos.vilnius.lt/service-list/Fiziniu-ir-juridiniu-asmenu-skundu-(pranesimu)-adresuotu-Savivaldybei-priemimas"
+        },
+        {
+          "keyword": "Nuomonė",
+          "url": "EMPTY"
+        },
+        {
+          "keyword": "Peticijos",
+          "url": "EMPTY"
+        }
+      ]
+    },
+    {
+      "keyword": "Sužinok",
+      "children": [
+        {
+          "keyword": "Projektai",
+          "url": "EMPTY"
+        },
+        {
+          "keyword": "Skelbimai",
+          "url": "EMPTY"
+        },
+        {
+          "keyword": "Finansai ir turtas",
+          "url": "EMPTY"
+        }
+      ]
+    },
+    {
+      "keyword": "Pažink",
+      "children": [
+        {
+          "keyword": "Istorija",
+          "children": [
+            {
+              "keyword": "Muziejai",
+              "url": "EMPTY"
+            },
+            {
+              "keyword": "Objektai",
+              "url": "EMPTY"
+            }
+          ]
+        },
+        {
+          "keyword": "Kultūra", 
+          "children": [
+            {
+              "keyword": "Parodos",
+              "url": "EMPTY"
+            },
+            {
+              "keyword": "Renginiai",
+              "url": "EMPTY"
+            }
+          ]
+        },
+        {
+          "keyword": "Finansai ir turtas",
+          "url": "EMPTY"
+        }
+      ]
+    },
+    {
+      "keyword": "Pramogauk",
+      "children": [
+        {
+          "keyword": "Renginiai",
+          "url": "EMPTY"
+        },
+        {
+          "keyword": "Laisvalaikis",
+          "url": "EMPTY"
+        },
+        {
+          "keyword": "Maistas",
+          "url": "EMPTY"
+        }
+      ]
+    }
+  ]
+}

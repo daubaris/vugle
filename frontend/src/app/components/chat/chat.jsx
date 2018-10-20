@@ -7,6 +7,7 @@ import Messages from './messages/messages';
 import chatActions from './redux/actions';
 
 import styles from './chat.scss';
+import { TypingMessage } from "./typing-message";
 
 class Chat extends React.Component {
     constructor(props) {
@@ -42,6 +43,7 @@ class Chat extends React.Component {
                         />
                     ))}
                 </div>
+				<TypingMessage/>
                 <SuggestionBar />
             </div>
         );
