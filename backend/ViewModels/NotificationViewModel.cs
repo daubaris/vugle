@@ -1,4 +1,6 @@
-﻿namespace VugleBE.ViewModels
+﻿using System;
+
+namespace VugleBE.ViewModels
 {
     public class NotificationViewModel
     {
@@ -7,5 +9,6 @@
         public string description { get; set; }
         public string type { get; set; }
         public string url { get; set; }
+        public DateTime date { get; set; }
     }
 }
