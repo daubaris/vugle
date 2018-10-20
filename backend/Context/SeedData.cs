@@ -161,12 +161,12 @@ namespace VugleBE.Context
                                SuggestionId = 1
                            },
                         },
-                        Responses = JsonConvert.SerializeObject(new List<object> 
+                        Responses = JsonConvert.SerializeObject(new List<object>
                         {
                             new { title = "Kokios pramogos domina?" },
                             new { title = new List<string>{"Pranešti?", "Kas nutiko?"}, random = 0.5 },
                             new { title = "title", date = "2018-04-13", description = "text", photo = "123", url = "www.vilnius.lt"}
-                        }) 
+                        })
                     },
                     new Suggestion
                     {
@@ -180,13 +180,13 @@ namespace VugleBE.Context
                                SuggestionId = 2
                            },
                         },
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Kokios pramogos domina?"} })
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Kokios pramogos domina?" } })
                     },
                     new Suggestion
                     {
                         Id = 3,
                         Title = "Pažink",
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Ką nori pažinti?"} })
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Ką nori pažinti?" } })
 
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
@@ -220,14 +220,14 @@ namespace VugleBE.Context
                                SuggestionId = 4
                            },
                         },
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Ką nori sužinoti?"} })
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Ką nori sužinoti?" } })
                     },
                     new Suggestion
                     {
                         Id = 5,
                         Title = "Skundas",
                         ParentId = 1,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Praneškite nusiskundimą, pateikdami ji čia.", url = "https://tvarkaumiesta.lt/"} }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Praneškite nusiskundimą, pateikdami ji čia.", url = "https://tvarkaumiesta.lt/" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
                             new KeywordSuggestions
@@ -292,7 +292,7 @@ namespace VugleBE.Context
                         Id = 8,
                         Title = "Maistas",
                         ParentId = 2,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Skanus maistas Vilniuje", url = "https://www.tripadvisor.com/Restaurants-g274951-Vilnius_Vilnius_County.html"} }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Skanus maistas Vilniuje", url = "https://www.tripadvisor.com/Restaurants-g274951-Vilnius_Vilnius_County.html" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
                             new KeywordSuggestions
@@ -697,7 +697,7 @@ namespace VugleBE.Context
                         Id = 28,
                         Title = "Atviri duomenys",
                         ParentId = 13,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Open-source kultūrą yra labai svarbi Vilniaus miestui"} }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Open-source kultūrą yra labai svarbi Vilniaus miestui" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -717,7 +717,7 @@ namespace VugleBE.Context
                         Id = 29,
                         Title = "Bankai",
                         ParentId = 14,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Bankų sąrašas Vilniuje"} }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Bankų sąrašas Vilniuje" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -794,8 +794,50 @@ namespace VugleBE.Context
                     }
 
                 );
+                context.Polls.AddRange(
+                    new Poll
+                    {
+                        Date = DateTime.Now,
+                        Description = "Tikriname vartotojų numonę šildymo klausimu",
+                        Title = "Ar įjungti šildymą?",
+                        Options = new List<Option>{
+                            new Option
+                            {
+                            Title = "Taip"
+                            },
+                            new Option
+                            {
+                            Title = "Ne"
+                            }
+                        }
+                    },
+                    new Poll
+                    {
+                        Date = DateTime.Now,
+                        Description = "Kiek Jums metų?",
+                        Title = "Tikriname sistemos naudotojų amžių",
+                        Options = new List<Option>{
+                            new Option
+                            {
+                            Title = "0-30"
+                            },
+                            new Option
+                            {
+                            Title = "30-50"
+                            },
+                            new Option
+                            {
+                            Title = "50-80"
+                            },
+                            new Option
+                            {
+                            Title = "80-100"
+                            }
+                        }
+                    }
+                );
                 context.SaveChanges();
             }
-}
+        }
     }
 }
