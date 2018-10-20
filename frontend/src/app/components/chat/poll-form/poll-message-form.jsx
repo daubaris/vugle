@@ -1,7 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 import Component from "@reactions/component";
-import Button from "app/components/button/button";
 import Chart from "app/components/chart/chart";
 import {Icon, RadioGroup} from 'evergreen-ui';
 
@@ -44,44 +43,6 @@ class PollForm extends React.Component {
             type,
             message,
         } = this.props;
-
-		return (
-			<div className={ wrapperClassname }>
-				{ type !== 'user' &&
-					<div className={ styles['avatar'] }>
-						<Icon size={30} icon="user"/>
-					</div>
-				}
-				<div className={ chatStyles['message-type-gray'] }>
-					<div className={ styles['text-primary']} ><b>{poll.title}</b></div>
-					<div>{poll.description}</div>
-					<Component
-						initialState={{
-							options: mapOptions(poll.options),
-							value: null,
-						}}
-						>
-						{({ state, setState }) => (
-							<RadioGroup
-								marginTop={20}
-								size={16}
-								label="Pasirinkimai"
-								value={state.value}
-								options={state.options}
-								onChange={value => setState({ value })}
-								defaultValue={null}
-							/>
-						)}
-					</Component>
-
-					<Button
-						title="Atsakyti!"
-					/>
-				</div>
-			</div>
-		);
-	}
-}
 
         const poll = {
             "id": 0,
