@@ -10,7 +10,6 @@ import sessionActions from 'app/pages/private/session/redux/actions';
 import LoginForm from './form';
 
 import styles from './login.scss';
-import restService from 'app/services/api';
 
 class LoginPage extends React.PureComponent {
     constructor(props) {
@@ -19,37 +18,19 @@ class LoginPage extends React.PureComponent {
         this.onSubmitLogin = this.onSubmitLogin.bind(this);
     }
 
-    parseLoginResponse(response) { 
-    }
-
     onSubmitLogin({ username, password }) {
         const {
             actions,
         } = this.props;
-        
-        return restService.post('api/user', {
-            "username": username,
-            "password": password,
-        }).then(response => { 
-            if (response.status >= 200 && response.status < 300) {
-                actions.session.setToken('___SUPER_SECRET_TOKEN___');
-                actions.router.push('/admin/dashboard');
-            } else {
-                throw new SubmissionError({
-                    _error: 'Invalid credentials',
-                });
-            }
-        }).catch(error => {
-            if (error.response && error.response.status === 401) {
-                throw new SubmissionError({
-                    _error: 'Invalid credentials',
-                });
-            } else {
-                throw new SubmissionError({
-                    _error: 'Request error',
-                });
-            }
-        });
+
+        if (username === 'vugle' && password === 'tieto') {
+            actions.session.setToken('___SUPER_SECRET_TOKEN___');
+            actions.router.push('/admin/dashboard');
+        } else {
+            throw new SubmissionError({
+                _error: 'Invalid credentials',
+            });
+        }
     }
 
     render() {

@@ -7,7 +7,6 @@ import Messages from './messages/messages';
 import chatActions from './redux/actions';
 
 import styles from './chat.scss';
-import { TypingMessage } from "./typing-message";
 
 class Chat extends React.Component {
     constructor(props) {
@@ -20,31 +19,20 @@ class Chat extends React.Component {
             actions,
         } = this.props;
 
-        actions.chat.beforeAddBotMessage();
-        setTimeout(() => {
-            actions.chat.addBotMessage({ title: 'Sveiki!' });
-            setTimeout(() => {
-                actions.chat.beforeAddBotMessage();
-                setTimeout(() => {
-                    actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?' });
-                    actions.chat.setBotResponding(false);
-                }, 500);
-            }, 300)
-        }, 750);
+        actions.chat.addBotMessage({ title: 'Sveiki!' });
+        actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?' });
     }
 
     render() {
         const {
             chat: {
                 messages,
-                waitingForBotResponse,
-                botResponding,
             },
         } = this.props;
 
         return (
             <div className={ styles['chat'] }>
-                <div className={ styles['char-area'] } id="chart-area">
+                <div className={ styles['char-area'] }>
                     { messages.map(message => (
                         <Messages
                             key={ message.id }
@@ -52,9 +40,8 @@ class Chat extends React.Component {
                             message={ message.message }
                         />
                     ))}
-                { waitingForBotResponse && <TypingMessage/> }
                 </div>
-                <SuggestionBar loading={ botResponding } />
+                <SuggestionBar />
             </div>
         );
     }
