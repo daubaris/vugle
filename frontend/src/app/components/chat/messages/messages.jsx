@@ -1,6 +1,7 @@
 import React from 'react';
 import { Icon } from 'evergreen-ui';
 import styles from './messages.scss';
+import Poll from './../poll-form/poll';
 import classnames from 'classnames';
 
 class Messages extends React.Component {
@@ -8,6 +9,9 @@ class Messages extends React.Component {
 		const {
 			type,
 			message,
+			allMessage: {
+                pollId,
+			},
 		} = this.props;
 
 		const wrapperClassname = classnames(styles['wrapper'], type === 'user' ? styles['blue'] : styles['gray']);
@@ -19,9 +23,14 @@ class Messages extends React.Component {
 						<Icon size={30} icon="user"/>
 					</div>
 				}
-				<div className={ styles['message-type-' + (type === 'user' ? 'blue' : 'gray')] }>
-					{ message }
-				</div>
+				{ pollId &&
+					<Poll id={ pollId } />
+				}
+				{ !pollId &&
+					<div className={ styles['message-type-' + (type === 'user' ? 'blue' : 'gray')] }>
+						{ message }
+					</div>
+				}
 			</div>
 		);
 	}

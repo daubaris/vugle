@@ -51,11 +51,6 @@ class PollForm extends React.Component {
 
 		return (
 			<div className={ wrapperClassname }>
-				{ type !== 'user' &&
-					<div className={ styles['avatar'] }>
-						<Icon size={30} icon="user"/>
-					</div>
-				}
 				<div className={ chatStyles['message-type-gray'] }>
 					<div className={ styles['text-primary']} ><b>{poll.title}</b></div>
 					<div>{poll.description}</div>

@@ -4,12 +4,14 @@ export const ADD_MESSAGE = 'CHAT__ADD_MESSAGE';
 export const BEFORE_ADD_BOT_MESSAGE = 'CHAT__BEFORE_ADD_BOT_MESSAGE';
 export const AFTER_ADD_BOT_MESSAGE = 'CHAT__AFTER_ADD_BOT_MESSAGE';
 export const SET_BOT_RESPONDING = 'CHAT__SET_BOT_RESPONDING';
+export const ADD_POLL_MESSAGE = 'CHAT__ADD_POLL_MESSAGE';
 
 const actions = {
     addMessage: createAction(ADD_MESSAGE),
     beforeAddBotMessage: createAction(BEFORE_ADD_BOT_MESSAGE),
     afterAddBotMessage: createAction(AFTER_ADD_BOT_MESSAGE),
     setBotResponding: createAction(SET_BOT_RESPONDING),
+    addPollMessage: createAction(ADD_POLL_MESSAGE),
 };
 
 function getTimeout() {
@@ -89,9 +91,26 @@ const addBotMessage = (suggestion) => (dispatch) => {
     dispatch(actions.addMessage(message));
 };
 
+const addPollMessage = (id) => (dispatch) => {
+    dispatch(actions.beforeAddBotMessage());
+    dispatch(actions.setBotResponding(true));
+
+    setTimeout(() => {
+        const titles = ['Atrodo yra klausimas į kurį galėtum atsakyti!', 'Turiu tau klausima...', 'Ką manai?'];
+        dispatch(addBotMessage({ title: titles }));
+        dispatch(actions.addMessage({
+            type: 'bot',
+            id: new Date().getTime(),
+            pollId: id,
+        }));
+        dispatch(actions.setBotResponding(false));
+    }, 1000);
+};
+
 export default {
     addUserMessage,
     addBotMessage,
     beforeAddBotMessage: actions.beforeAddBotMessage,
     setBotResponding: actions.setBotResponding,
+    addPollMessage,
 };
