@@ -1,29 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button as ButtonStrapButton } from 'reactstrap';
+import { Button as ButtonEvergreen, Text } from 'evergreen-ui';
 
 const Button = (props) => {
     const {
         title,
         onClick,
-        type,
-        color,
         disabled,
-        size,
-        block,
+        appearance,
+        intent,
+        height,
     } = props;
 
     return (
-        <ButtonStrapButton
-            type={ type }
-            onClick={ onClick }
-            color={ color }
-            disabled={ disabled }
-            size={ size }
-            block={ block }
+        <ButtonEvergreen
+            height={height}
+            intent={intent}
+            onClick={onClick}
+            disabled={disabled}
+            appearance={appearance}
         >
-            { title }
-        </ButtonStrapButton>
+            <Text
+                size={400}
+            >
+                {title}
+            </Text>
+        </ButtonEvergreen>
     );
 };
 

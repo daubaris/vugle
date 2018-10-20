@@ -8,8 +8,16 @@
     margin: 0;
     min-height: 100vh;
     font-family: $font-family;
-    font-size: 12px;
   }
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: transparent;
 }
 
 .app {

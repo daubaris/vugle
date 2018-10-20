@@ -1,6 +1,7 @@
 import React from 'react';
 import { Alert } from 'reactstrap';
 
+import ChartPage from '../chart/chart-page'
 import NotificationPage from '../notification/notification-page'
 
 class DashboardPage extends React.Component {
@@ -8,6 +9,7 @@ class DashboardPage extends React.Component {
         return (
             <div>
                 <NotificationPage />
+                <ChartPage />
             </div>
         );
     }
