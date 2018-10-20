@@ -16,5 +16,7 @@ namespace VugleBE.Context
         public DbSet<Suggestion> Suggestions { get; set; }
         public DbSet<SuggestionKeyword> SuggestionKeywords { get; set; }
         public DbSet<KeywordSuggestions> KeywordSuggestions { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+
     }
 }
