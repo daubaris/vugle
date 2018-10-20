@@ -23,15 +23,17 @@
   background-color: #00A0E3;
   color: white;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 15px;
+  border-bottom-right-radius: 0;
 }
 
 .message-type-gray {
   font-size: 12px;
   margin: 5px 10px 5px 10px;
   float: left;
-  background-color: #E2E2E2;
   color: #151515;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 15px;
+  border-bottom-left-radius: 0;
+  border: 1px solid #E2E2E2;
 }

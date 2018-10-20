@@ -7,7 +7,8 @@ import Messages from './messages/messages';
 import chatActions from './redux/actions';
 
 import styles from './chat.scss';
-import { TypingMessage } from "./typing-message";
+import { TypingMessage } from './typing-message';
+import PollForm from './poll-form/poll-message-form';
 
 class Chat extends React.Component {
     constructor(props) {
@@ -34,15 +35,16 @@ class Chat extends React.Component {
         return (
             <div className={ styles['chat'] }>
                 <div className={ styles['char-area'] }>
-                    { messages.map(message => (
+                    { messages.map((message) => (
                         <Messages
                             key={ message.id }
                             type={ message.type }
                             message={ message.message }
                         />
                     ))}
+                    <PollForm />
                 </div>
-				<TypingMessage/>
+                <TypingMessage />
                 <SuggestionBar />
             </div>
         );
@@ -55,7 +57,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     actions: {
-        chat: bindActionCreators(chatActions, dispatch)
+        chat: bindActionCreators(chatActions, dispatch),
     },
 });
 
