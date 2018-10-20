@@ -13,11 +13,9 @@ class TypingMessage extends React.Component {
 
 		return (
 			<div className={ wrapperClassname }>
-				{ type !== 'user' &&
-				<div className={ styles['avatar'] }>
-					<Icon size={30} icon="user"/>
-				</div>
-				}
+                <div className={ styles['avatar'] }>
+                    <Icon size={30} icon="user"/>
+                </div>
 				<div className={ styles['lds-ellipsis'] }>
 					<div></div>
 					<div></div>

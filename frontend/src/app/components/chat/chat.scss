@@ -1,12 +1,12 @@
 .chat {
-  height: calc(100vh - 85px);
+  height: calc(100vh - 50px);
+  position: relative;
 
   .char-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    position: absolute;
+    bottom: 60px;
     width: 100%;
-    height: calc(100vh - 111px);
-    overflow-y: scroll;
+    max-height: calc(100vh - 111px);
+    overflow: scroll;
   }
 }

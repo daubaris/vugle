@@ -39,6 +39,8 @@ class RestService {
 
         return {
             ...configs,
+            method: 'HEAD',
+            mode: 'no-cors',
             headers: {
                 "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "*",

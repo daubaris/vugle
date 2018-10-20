@@ -73,6 +73,10 @@ class SuggestionBar extends React.Component {
             suggestions,
 		} = this.state;
 
+		const {
+            loading,
+        } = this.props;
+
 		return (
 			<div className={ styles['suggestion-bar'] }>
 				{ suggestions.map(suggestion => (
@@ -80,6 +84,7 @@ class SuggestionBar extends React.Component {
 						key={ suggestion.id }
                         suggestion={ suggestion }
 						onClick={ this.onClick }
+                        disabled={ loading }
 					/>
 				))}
 			</div>

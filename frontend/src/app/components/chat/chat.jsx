@@ -27,6 +27,7 @@ class Chat extends React.Component {
                 actions.chat.beforeAddBotMessage();
                 setTimeout(() => {
                     actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?' });
+                    actions.chat.setBotResponding(false);
                 }, 500);
             }, 300)
         }, 750);
@@ -37,14 +38,13 @@ class Chat extends React.Component {
             chat: {
                 messages,
                 waitingForBotResponse,
+                botResponding,
             },
         } = this.props;
 
-        console.log(waitingForBotResponse, 'waitingForBotResponse');
-
         return (
             <div className={ styles['chat'] }>
-                <div className={ styles['char-area'] }>
+                <div className={ styles['char-area'] } id="chart-area">
                     { messages.map(message => (
                         <Messages
                             key={ message.id }
@@ -52,9 +52,9 @@ class Chat extends React.Component {
                             message={ message.message }
                         />
                     ))}
-                </div>
                 { waitingForBotResponse && <TypingMessage/> }
-                <SuggestionBar />
+                </div>
+                <SuggestionBar loading={ botResponding } />
             </div>
         );
     }

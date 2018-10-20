@@ -4,12 +4,14 @@ import {
     ADD_MESSAGE,
     BEFORE_ADD_BOT_MESSAGE,
     AFTER_ADD_BOT_MESSAGE,
+    SET_BOT_RESPONDING,
 } from './actions';
 
 export function getInitialState() {
     return {
         messages: [],
         waitingForBotResponse: false,
+        botResponding: false,
     };
 }
 
@@ -32,4 +34,8 @@ export default handleActions({
         ...state,
         waitingForBotResponse: false,
     }),
+    [SET_BOT_RESPONDING]: (state, { payload }) => ({
+        ...state,
+        botResponding: payload,
+    })
 }, getInitialState());

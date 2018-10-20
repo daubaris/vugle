@@ -1,5 +1,8 @@
 import React from 'react';
 import { Pane } from 'evergreen-ui';
+import classnames from 'classnames';
+
+import styles from './suggestions-bubble.scss';
 
 class SuggestionsBubble extends React.Component {
 	constructor(props) {
@@ -9,7 +12,15 @@ class SuggestionsBubble extends React.Component {
 	}
 
 	onClick() {
-		this.props.onClick(this.props.suggestion);
+		const {
+			onClick,
+            suggestion,
+			disabled,
+		} = this.props;
+
+		if (!disabled) {
+			onClick(suggestion);
+		}
 	}
 
 	render() {
@@ -22,13 +33,21 @@ class SuggestionsBubble extends React.Component {
 
 		const {
 			suggestion,
+			disabled,
 		} = this.props;
+
+		const classname = classnames(
+			styles['suggestions-bubble'],
+            disabled && styles['disabled'],
+		);
 
 		return (
 			<Pane
 				{...cardStyles}
 				elevation={ 1 }
-				onClick={ this.onClick }>
+				onClick={ this.onClick }
+				className={ classname }
+			>
 				{ suggestion.title }
 			</Pane>
 		);
