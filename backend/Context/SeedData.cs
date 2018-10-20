@@ -161,12 +161,12 @@ namespace VugleBE.Context
                                SuggestionId = 1
                            },
                         },
-                        Responses = JsonConvert.SerializeObject(new List<object> 
+                        Responses = JsonConvert.SerializeObject(new List<object>
                         {
                             new { title = "Kokios pramogos domina?" },
                             new { title = new List<string>{"Pranešti?", "Kas nutiko?"}, random = 0.5 },
-                            new {  title = "title", date = "2018-04-13", description = "text", photo = "123", url = "www.vilnius.lt"}
-                        }) 
+                            new { title = "title", date = "2018-04-13", description = "text", photo = "123", url = "www.vilnius.lt"}
+                        })
                     },
                     new Suggestion
                     {
@@ -180,13 +180,13 @@ namespace VugleBE.Context
                                SuggestionId = 2
                            },
                         },
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Kokios pramogos domina?"} })
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Kokios pramogos domina?" } })
                     },
                     new Suggestion
                     {
                         Id = 3,
                         Title = "Pažink",
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Ką nori pažinti?"} })
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Ką nori pažinti?" } })
 
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
@@ -220,14 +220,14 @@ namespace VugleBE.Context
                                SuggestionId = 4
                            },
                         },
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Ką nori sužinoti?"} })
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Ką nori sužinoti?" } })
                     },
                     new Suggestion
                     {
                         Id = 5,
                         Title = "Skundas",
                         ParentId = 1,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors Skundas", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Praneškite nusiskundimą, pateikdami ji čia.", url = "https://tvarkaumiesta.lt/" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
                             new KeywordSuggestions
@@ -247,7 +247,7 @@ namespace VugleBE.Context
                         Id = 6,
                         Title = "Nuomonė",
                         ParentId = 1,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors Nuomones", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Praneškite savo nuomone", url = "https://tvarkaumiesta.lt/" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -267,7 +267,7 @@ namespace VugleBE.Context
                         Id = 7,
                         Title = "Peticija",
                         ParentId = 1,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors peticijos", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Peticijas galite pateikti", url = "https://paslaugos.vilnius.lt/petitions" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
                             new KeywordSuggestions
@@ -292,7 +292,7 @@ namespace VugleBE.Context
                         Id = 8,
                         Title = "Maistas",
                         ParentId = 2,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors maisto", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Skanus maistas Vilniuje", url = "https://www.tripadvisor.com/Restaurants-g274951-Vilnius_Vilnius_County.html" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
                             new KeywordSuggestions
@@ -317,7 +317,7 @@ namespace VugleBE.Context
                         Id = 9,
                         Title = "Renginiai",
                         ParentId = 2,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors renginiai", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Kas vyksta vilniuje galit sužinoti", url = "https://renginiai.kasvyksta.lt/vilnius" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
                            new KeywordSuggestions
@@ -337,7 +337,7 @@ namespace VugleBE.Context
                         Id = 10,
                         Title = "Laisvalaikis",
                         ParentId = 2,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors laisvalikis", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilnius pilnas laisvalaikio veiklų" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
                            new KeywordSuggestions
@@ -357,7 +357,7 @@ namespace VugleBE.Context
                         Id = 11,
                         Title = "Istorija",
                         ParentId = 3,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors istorijos", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilnius pilnas istorijos" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
                            new KeywordSuggestions
@@ -377,7 +377,7 @@ namespace VugleBE.Context
                         Id = 12,
                         Title = "Kultūra",
                         ParentId = 3,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors kultura", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilnius gausus kultūra" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
                            new KeywordSuggestions
@@ -397,7 +397,7 @@ namespace VugleBE.Context
                         Id = 13,
                         Title = "Servisai",
                         ParentId = 4,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors servisai", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilniaus paslaugos" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
                            new KeywordSuggestions
@@ -417,7 +417,7 @@ namespace VugleBE.Context
                         Id = 14,
                         Title = "Finansai",
                         ParentId = 4,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors finansai", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Visa informacija susijusi su finansais", url = "https://atviras.vilnius.lt/kategorijos/finansai-ir-turtas" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
                            new KeywordSuggestions
@@ -437,7 +437,7 @@ namespace VugleBE.Context
                         Id = 15,
                         Title = "Transportas",
                         ParentId = 4,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors transportas", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilniaus transporto informacija vienoje vietoje", url = "https://www.trafi.com/lt/vilnius" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -457,7 +457,7 @@ namespace VugleBE.Context
                         Id = 16,
                         Title = "Parduotuvės",
                         ParentId = 4,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors parduotuves", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Puikus metas apsipirkti", url = "http://www.vilnius-tourism.lt/ka-veikti/apsipirkimas/prekybos-ir-pramogu-centrai/" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -477,7 +477,7 @@ namespace VugleBE.Context
                         Id = 17,
                         Title = "Restoranai",
                         ParentId = 8,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors restorania", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Lietuviški restoranai", url = "http://www.vilnius-tourism.lt/ka-veikti/lietuviska-virtuve/" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -497,7 +497,7 @@ namespace VugleBE.Context
                         Id = 18,
                         Title = "Kavinės",
                         ParentId = 8,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors kavines", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilniuje yra kur pasėdėti su puodeliu kavos", url = "http://www.ivilnius.lt/kur-pavalgyti/kavines/" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -517,7 +517,7 @@ namespace VugleBE.Context
                         Id = 19,
                         Title = "Gėrimai",
                         ParentId = 8,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors gerimai", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilniuj tikrai yra kur atsigerti ;)", url = "http://www.vilnius-tourism.lt/ka-veikti/klubai-ir-barai/" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -537,7 +537,7 @@ namespace VugleBE.Context
                         Id = 20,
                         Title = "Sportas",
                         ParentId = 10,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors sportas", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Sporto vietos Vilniuje", url = "https://sportas.vilnius.lt/" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -557,7 +557,7 @@ namespace VugleBE.Context
                         Id = 21,
                         Title = "Ivairūs užsiemimai",
                         ParentId = 10,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors užsiėmimai", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Veikla vilniuje", url = "http://www.vilnius-tourism.lt/ka-pamatyti/vilnius-jums/jaunimui/" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -577,7 +577,7 @@ namespace VugleBE.Context
                         Id = 22,
                         Title = "Muziejai",
                         ParentId = 11,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors muziejai", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilniaus muziejų sąrašas", url = "http://www.madeinvilnius.com/lt/kultura/vilniaus-muziejai-sarasas/i/    " } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -597,7 +597,7 @@ namespace VugleBE.Context
                         Id = 23,
                         Title = "Architektūra",
                         ParentId = 11,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors architek", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilniaus architektūrinių statinių sąraša", url = "http://www.ivilnius.lt/apie-vilniu/architektura/" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -617,7 +617,7 @@ namespace VugleBE.Context
                         Id = 24,
                         Title = "Senamiestis",
                         ParentId = 11,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors oldtown", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilniaus senamiestis", url = "http://www.lithuania.travel/lt/objektai/vilniaus-senamiestis/452" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -637,7 +637,7 @@ namespace VugleBE.Context
                         Id = 25,
                         Title = "Renginiai",
                         ParentId = 12,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors Renginiai", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Renginių sąrašas Vilniuje" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -657,7 +657,7 @@ namespace VugleBE.Context
                         Id = 26,
                         Title = "Teatras",
                         ParentId = 12,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors teatras", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilniuje dominanti tetrą visada surasi" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -677,7 +677,7 @@ namespace VugleBE.Context
                         Id = 27,
                         Title = "Savivaldybė",
                         ParentId = 13,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors savivaldybe", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Informacija apie savivaldybė" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -697,7 +697,7 @@ namespace VugleBE.Context
                         Id = 28,
                         Title = "Atviri duomenys",
                         ParentId = 13,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors api", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Open-source kultūrą yra labai svarbi Vilniaus miestui" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -717,7 +717,7 @@ namespace VugleBE.Context
                         Id = 29,
                         Title = "Bankai",
                         ParentId = 14,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors bankai", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Bankų sąrašas Vilniuje" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -737,7 +737,7 @@ namespace VugleBE.Context
                         Id = 30,
                         Title = "Miesto biudžetas",
                         ParentId = 14,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors biudzetas", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilnius turi daug pinigų" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -757,7 +757,7 @@ namespace VugleBE.Context
                         Id = 31,
                         Title = "Viešasis transportas",
                         ParentId = 15,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors viesasis", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Viešasis transportas Vilniuje" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -777,7 +777,7 @@ namespace VugleBE.Context
                         Id = 32,
                         Title = "Eismas",
                         ParentId = 15,
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "kas nors eismas", randomInt = 0.5f } }),
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Eismo informacija Vilniuje", url = "https://www.waze.com/livemap" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
                         //    new KeywordSuggestions
@@ -794,8 +794,50 @@ namespace VugleBE.Context
                     }
 
                 );
+                context.Polls.AddRange(
+                    new Poll
+                    {
+                        Date = DateTime.Now,
+                        Description = "Tikriname vartotojų numonę šildymo klausimu",
+                        Title = "Ar įjungti šildymą?",
+                        Options = new List<Option>{
+                            new Option
+                            {
+                            Title = "Taip"
+                            },
+                            new Option
+                            {
+                            Title = "Ne"
+                            }
+                        }
+                    },
+                    new Poll
+                    {
+                        Date = DateTime.Now,
+                        Description = "Kiek Jums metų?",
+                        Title = "Tikriname sistemos naudotojų amžių",
+                        Options = new List<Option>{
+                            new Option
+                            {
+                            Title = "0-30"
+                            },
+                            new Option
+                            {
+                            Title = "30-50"
+                            },
+                            new Option
+                            {
+                            Title = "50-80"
+                            },
+                            new Option
+                            {
+                            Title = "80-100"
+                            }
+                        }
+                    }
+                );
                 context.SaveChanges();
             }
-}
+        }
     }
 }

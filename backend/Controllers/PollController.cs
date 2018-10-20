@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using VugleBE.Context;
 using VugleBE.Context.Models;
+using VugleBE.Services;
 using VugleBE.ViewModels;
 
 namespace VugleBE.Controllers
@@ -82,7 +82,7 @@ namespace VugleBE.Controllers
         [ProducesResponseType(200)]
         [HttpPut]
         [EnableCors("AllowSpecificOrigin")]
-        public IActionResult AddNewPoll([FromBody]PollViewModel request)
+        public async Task<IActionResult> AddNewPoll([FromBody]PollViewModel request)
         {
             var poll = new Poll
             {
@@ -96,6 +96,9 @@ namespace VugleBE.Controllers
             };
             _context.Add(poll);
             _context.SaveChanges();
+
+            await PusherService.SendNotification(poll.Id, "new-poll");
+
             return Ok(poll.Id);
         }
         // Get api/Poll/All
