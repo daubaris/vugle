@@ -7,6 +7,7 @@ import { Container, Row, Col, Card, CardBody } from 'reactstrap';
 
 import sessionActions from 'app/pages/private/session/redux/actions';
 import NotificationForm from './notification-form';
+import restService from 'app/services/api';
 
 class NotificationPage extends React.PureComponent {
     constructor(props) {
@@ -16,22 +17,28 @@ class NotificationPage extends React.PureComponent {
     }
 
     onSubmitNotification(values) {
-        var headers = {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Methods": "*"
-        };
+        // var headers = {
+        //     "Content-Type": "application/json",
+        //     "Access-Control-Allow-Origin": "*",
+        //     "Access-Control-Allow-Headers": "*",
+        //     "Access-Control-Allow-Methods": "*"
+        // };
+        //
+        // fetch("https://vugle-be.azurewebsites.net/api/pusher", {
+        //     method: "POST",
+        //     headers: headers,
+        //     mode: 'cors',
+        //     body: JSON.stringify({
+        //         "title": values.notificationTitle,
+        //         "description": values.notificationText,
+        //         "type": values.notificationType,
+        //     })
+        // })
 
-        fetch("https://vugle-be.azurewebsites.net/api/pusher", {
-            method: "POST",
-            headers: headers,
-            mode: 'cors',
-            body: JSON.stringify({
-                "title": values.notificationTitle,
-                "description": values.notificationText,
-                "type": values.notificationType,
-            })
+        restService.post('https://vugle-be.azurewebsites.net/api/pusher', {
+            "title": values.notificationTitle,
+            "description": values.notificationText,
+            "type": values.notificationType,
         });
     }
 

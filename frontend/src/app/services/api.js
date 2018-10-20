@@ -40,7 +40,10 @@ class RestService {
         return {
             ...configs,
             headers: {
-                Authorization: session.token,
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Headers": "*",
+                "Access-Control-Allow-Methods": "*"
             },
         };
     }
