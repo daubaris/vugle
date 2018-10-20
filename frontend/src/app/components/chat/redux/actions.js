@@ -1,10 +1,13 @@
 import { createAction } from 'redux-actions';
+import restService from 'app/services/api';
 
 export const ADD_MESSAGE = 'CHAT__ADD_MESSAGE';
 export const BEFORE_ADD_BOT_MESSAGE = 'CHAT__BEFORE_ADD_BOT_MESSAGE';
 export const AFTER_ADD_BOT_MESSAGE = 'CHAT__AFTER_ADD_BOT_MESSAGE';
 export const SET_BOT_RESPONDING = 'CHAT__SET_BOT_RESPONDING';
 export const ADD_POLL_MESSAGE = 'CHAT__ADD_POLL_MESSAGE';
+export const BEFORE_GET_SUGGESTIONS = 'CHAT__BEFORE_GET_SUGGESTIONS';
+export const AFTER_GET_SUGGESTIONS = 'CHAT__AFTER_GET_SUGGESTIONS';
 
 const actions = {
     addMessage: createAction(ADD_MESSAGE),
@@ -12,6 +15,8 @@ const actions = {
     afterAddBotMessage: createAction(AFTER_ADD_BOT_MESSAGE),
     setBotResponding: createAction(SET_BOT_RESPONDING),
     addPollMessage: createAction(ADD_POLL_MESSAGE),
+    afterGetSuggestions: createAction(AFTER_GET_SUGGESTIONS),
+    beforeGetSuggestions: createAction(BEFORE_GET_SUGGESTIONS),
 };
 
 function getTimeout() {
@@ -117,10 +122,22 @@ const addPollMessage = (id) => (dispatch) => {
     }, 1000);
 };
 
+const getSuggestions = (id) => (dispatch) => {
+    dispatch(actions.beforeAddBotMessage());
+    restService.get(`/api/Suggestion/${id}`)
+        .then((data) => {
+            dispatch(actions.afterGetSuggestions({
+                data,
+                id,
+            }));
+        });
+};
+
 export default {
     addUserMessage,
     addBotMessage,
     beforeAddBotMessage: actions.beforeAddBotMessage,
     setBotResponding: actions.setBotResponding,
     addPollMessage,
+    getSuggestions,
 };
