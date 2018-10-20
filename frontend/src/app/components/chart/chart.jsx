@@ -12,22 +12,29 @@ class Chart extends React.Component {
       var chartData = [
         {
           value: 300,
-          color:"#F7464A",
-          highlight: "#FF5A5E",
-          label: "Red"
+          color: "#00072D",
+          highlight: "#2E3453",
         },
         {
           value: 50,
-          color: "#46BFBD",
-          highlight: "#5AD3D1",
-          label: "Green"
+          color: "#FFFFFF",
+          highlight: "#FFFFFF",
         },
         {
           value: 100,
-          color: "#FDB45C",
-          highlight: "#FFC870",
-          label: "Yellow"
-        }
+          color: "#1098F7",
+          highlight: "#3BAAF8",
+        },
+        {
+          value: 100,
+          color: "#EBBAB9",
+          highlight: "#EEC6C5",
+        },
+        {
+          value: 100,
+          color: "#D7263D",
+          highlight: "#DE4D60",
+        },
       ];
   
       var chartOptions = {
@@ -62,7 +69,7 @@ class Chart extends React.Component {
       
       return (
           <React.Fragment>
-          <PieChart data={this.props.data} options={chartOptions}/>
+          <PieChart data={this.item.data} options={chartOptions}/>
               </React.Fragment>
       );
     }
