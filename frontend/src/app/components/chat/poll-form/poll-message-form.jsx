@@ -2,9 +2,11 @@ import React from 'react';
 import classnames from 'classnames';
 import Component from "@reactions/component";
 import Chart from "app/components/chart/chart";
-import {Icon, RadioGroup} from 'evergreen-ui';
+import {Icon, RadioGroup, Spinner} from 'evergreen-ui';
 
+import restService from 'app/services/api';
 import { Button } from 'app/components/button';
+
 import styles from './poll-form.scss';
 import chatStyles from '../messages/messages.scss';
 
@@ -23,9 +25,12 @@ class PollForm extends React.Component {
         this.showChart = this.showChart.bind(this);
 
         this.state = {
-            isChartShown: false
-        }
-    }
+						isChartShown: false,
+						value: props.poll.options[0].title,
+						hasSubmitted: false,
+				}
+		}
+
     showChart() {
         if (this.state.isChartShown === false) {
             this.setState({
@@ -36,7 +41,31 @@ class PollForm extends React.Component {
                 isChartShown: false
             })
         }
-    }
+		}
+		
+		submitAnswer() {
+			this.setState({
+				isSubmitting: true,
+			});
+
+			const {
+				value,
+			} = this.state;
+
+			const data = {
+				pollId: this.props.poll.id,
+				response: value,
+			};
+
+			if (value) {
+				restService.post('/api/Poll/Response', data).then(() => {
+					this.setState({
+						hasSubmitted: true,
+					});
+				});
+			}
+
+		}
 
     render() {
         const {
@@ -46,33 +75,6 @@ class PollForm extends React.Component {
         } = this.props;
 
         const wrapperClassname = classnames(styles['wrapper'], type === 'user' ? styles['blue'] : styles['gray']);
-
-        const chartData = [
-            {
-                value: 111,
-                color: "#F7464A",
-                highlight: "#FF5A5E",
-                label: "Red"
-            },
-            {
-                value: 123,
-                color: "#46BFBD",
-                highlight: "#5AD3D1",
-                label: "Green"
-            },
-            {
-                value: 777,
-                color: "#FDB45C",
-                highlight: "#FFC870",
-                label: "Yellow"
-            },
-            {
-                value: 999,
-                color: "red",
-                highlight: "#FFC870",
-                label: "Yellow"
-            }
-        ];
 
         return (
             <div className={wrapperClassname}>
@@ -92,12 +94,17 @@ class PollForm extends React.Component {
                                 label="Pasirinkimai"
                                 value={state.value}
                                 options={state.options}
-                                onChange={value => setState({value})}
+                                onChange={value => this.setState({value})}
                                 defaultValue={null}
                             />
                         )}
                     </Component>
                     <div className={chatStyles['show-results']}>
+												{	!this.state.hasSubmitted &&
+													<div>
+														<Button size="sm" title="Siųsti atsakymą" onClick={() => this.submitAnswer()}/>
+													</div>
+												}
                         <div>
                             <Button size="sm" title="Rodyti rezultatus" onClick={() => this.showChart()}/>
                         </div>
