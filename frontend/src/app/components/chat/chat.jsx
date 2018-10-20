@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { SuggestionBar } from './suggestion-bar';
 import Messages from './messages/messages';
 import chatActions from './redux/actions';
+import { TypingMessage } from "./typing-message";
 
 import styles from './chat.scss';
 import PollForm from './poll-form/poll-message-form';
@@ -12,7 +13,6 @@ import PollForm from './poll-form/poll-message-form';
 class Chat extends React.Component {
     constructor(props) {
         super(props);
-
     }
 
     componentDidMount() {
@@ -38,22 +38,25 @@ class Chat extends React.Component {
         const {
             chat: {
                 messages,
+                waitingForBotResponse,
+                botResponding,
             },
         } = this.props;
 
         return (
             <div className={ styles['chat'] }>
-                <div className={ styles['char-area'] }>
-                    { messages.map((message) => (
+                <div className={ styles['char-area'] } id="chart-area">
+                    { messages.map(message => (
                         <Messages
                             key={ message.id }
                             type={ message.type }
                             message={ message.message }
                         />
                     ))}
-                    <PollForm />
+                    { waitingForBotResponse && <TypingMessage/> }
+                    {/*<PollForm />*/}
                 </div>
-                <SuggestionBar />
+                <SuggestionBar loading={ botResponding } />
             </div>
         );
     }

@@ -1,0 +1,6 @@
+.suggestions-bubble {
+  cursor: pointer;
+  &.disabled {
+    background: rgba(gray, 0.1);
+  }
+}

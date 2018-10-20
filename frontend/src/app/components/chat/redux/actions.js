@@ -32,24 +32,24 @@ const pushMessages = (suggestions, counter, dispatch) => {
             if (suggestion.random) {
                 if (Math.random() > suggestion.random) {
                     dispatch(actions.beforeAddBotMessage());
-                    document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 200;
+                    document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
                     sleep(Math.random() * getTimeout())
                         .then(() => {
                             dispatch(addBotMessage({ title: suggestion.title }));
                             pushMessages(suggestions, counter + 1, dispatch);
-                            document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 200;
+                            document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
                         });
                 } else {
                     pushMessages(suggestions, counter + 1, dispatch);
                 }
             } else {
                 dispatch(actions.beforeAddBotMessage());
-                document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 200;
+                document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
                 sleep(Math.random() * getTimeout())
                     .then(() => {
                         dispatch(addBotMessage({ title: suggestion.title }));
                         pushMessages(suggestions, counter + 1, dispatch);
-                        document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 200;
+                        document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
                     });
             }
         } else  if (!suggestion) {
@@ -67,7 +67,7 @@ const addUserMessage = (suggestion) => (dispatch) => {
 
     dispatch(actions.addMessage(message));
     dispatch(actions.setBotResponding(true));
-    document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 200;
+    document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
 
     sleep(300)
         .then(() => {

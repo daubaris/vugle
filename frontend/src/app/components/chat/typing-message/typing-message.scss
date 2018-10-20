@@ -1,24 +1,22 @@
+.avatar {
+  margin: 0 20px 0 16px!important;
+}
 .lds-ellipsis {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  border-radius: 5px;
+  background-color: #E2E2E2;
   width: 64px;
-  height: 38px; 
-  margin: 5px 10px 5px 10px;
-  float: left;
-  padding: 10px;
-  border-radius: 15px;
-  border-bottom-left-radius: 0;
-  border: 1px solid #E2E2E2;
-  }
-
+  height: 38px;
+}
 .lds-ellipsis div {
   position: absolute;
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #E2E2E2;
+  background: #000;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {
@@ -61,20 +59,15 @@
     transform: translate(19px, 0);
   }
 }
-
 .wrapper {
   width: 100%;
   display: flex;
   align-items: center;
-
   &.blue {
-
     justify-content: flex-end;
   }
-
   .avatar {
     margin: 0 10px 0 16px;
-
     .icon-user {
       font-size: 40px;
     }
