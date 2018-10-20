@@ -13,5 +13,8 @@ namespace VugleBE.Context
         public DbSet<Poll> Polls { get; set; }
         public DbSet<Option> Options { get; set; }
         public DbSet<PollResponse> PollResponses { get; set; }
+        public DbSet<Suggestion> Suggestions { get; set; }
+        public DbSet<SuggestionKeyword> SuggestionKeywords { get; set; }
+        public DbSet<KeywordSuggestions> KeywordSuggestions { get; set; }
     }
 }
