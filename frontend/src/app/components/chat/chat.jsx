@@ -19,14 +19,15 @@ class Chat extends React.Component {
             actions,
         } = this.props;
 
-        actions.chat.addBotMessage({ title: 'Sveiki!' });
-        actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?' });
+        actions.chat.addBotMessage({ title: 'Sveiki!' }, Math.random() * 1000);
+        actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?' }, 300);
     }
 
     render() {
         const {
             chat: {
                 messages,
+                waitingForBotResponse,
             },
         } = this.props;
 
