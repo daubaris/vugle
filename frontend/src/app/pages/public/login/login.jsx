@@ -19,19 +19,7 @@ class LoginPage extends React.PureComponent {
         this.onSubmitLogin = this.onSubmitLogin.bind(this);
     }
 
-    parseLoginResponse(response) {  
-        if (response && response.status === 204) {
-            actions.session.setToken('___SUPER_SECRET_TOKEN___');
-            actions.router.push('/admin/dashboard');
-        } else if (response && response.status === 401) {
-            throw new SubmissionError({
-                _error: 'Invalid credentials',
-            });
-        } else {
-            throw new SubmissionError({
-                _error: 'Request error',
-            });
-        }
+    parseLoginResponse(response) { 
     }
 
     onSubmitLogin({ username, password }) {
@@ -43,9 +31,24 @@ class LoginPage extends React.PureComponent {
             "username": username,
             "password": password,
         }).then(response => { 
-            this.parseLoginResponse(response);
+            if (response.status >= 200 && response.status < 300) {
+                actions.session.setToken('___SUPER_SECRET_TOKEN___');
+                actions.router.push('/admin/dashboard');
+            } else {
+                throw new SubmissionError({
+                    _error: 'Invalid credentials',
+                });
+            }
         }).catch(error => {
-            this.parseLoginResponse(error.response);
+            if (error.response && error.response.status === 401) {
+                throw new SubmissionError({
+                    _error: 'Invalid credentials',
+                });
+            } else {
+                throw new SubmissionError({
+                    _error: 'Request error',
+                });
+            }
         });
     }
 
