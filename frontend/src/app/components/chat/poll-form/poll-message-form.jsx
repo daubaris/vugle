@@ -102,11 +102,19 @@ class PollForm extends React.Component {
                     <div className={chatStyles['show-results']}>
 												{	!this.state.hasSubmitted &&
 													<div>
-														<Button size="sm" title="Siųsti atsakymą" onClick={() => this.submitAnswer()}/>
+														<Button 
+															height={40}
+															title="Siųsti atsakymą"
+															onClick={() => this.submitAnswer()}
+														/>
 													</div>
 												}
                         <div>
-                            <Button size="sm" title="Rodyti rezultatus" onClick={() => this.showChart()}/>
+														<Button 
+															height={40}
+															title="Rodyti rezultatus"
+															onClick={() => this.showChart()}
+														/>
                         </div>
                         <div>
                             {this.state.isChartShown && <Chart data={ poll.options }/>}
