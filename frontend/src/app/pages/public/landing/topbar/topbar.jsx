@@ -28,6 +28,7 @@ class Topbar extends React.Component {
                 <SideSheet
                     position={Position.RIGHT}
                     isShown={ this.state.isShown}
+                    width={ 320 }
                     onCloseComplete={() => this.setState({ isShown: false })}
                 >
                     <Paragraph margin={40}>Basic Example</Paragraph>

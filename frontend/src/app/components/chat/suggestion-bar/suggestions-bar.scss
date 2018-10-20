@@ -1,9 +1,9 @@
 .suggestion-bar {
   display: flex;
-  justify-content: center;
-  overflow: scroll;
+  overflow-x: scroll;
   min-height: 40px;
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
   max-width: 100%;
+  width: 100%;
 }
