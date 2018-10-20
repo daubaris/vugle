@@ -13,7 +13,7 @@ const actions = {
 };
 
 function getTimeout() {
-    return Math.random() * 1000;
+    return (Math.random() + 0.2) * 1000;
 }
 
 function getRandomInt(min, max) {
