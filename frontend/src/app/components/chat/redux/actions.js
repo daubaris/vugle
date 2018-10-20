@@ -12,14 +12,12 @@ const actions = {
     setBotResponding: createAction(SET_BOT_RESPONDING),
 };
 
-function getTimeout(suggestionsLength, index) {
-    const leftMessagesCount = suggestionsLength - (index + 1);
+function getTimeout() {
+    return Math.random() * 1000;
+}
 
-    if (suggestionsLength >= 3 && leftMessagesCount === 0) {
-        return 0;
-    }
-
-    return Math.random() * 5000;
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function sleep(milliseconds) {
@@ -35,7 +33,7 @@ const pushMessages = (suggestions, counter, dispatch) => {
                 if (Math.random() > suggestion.random) {
                     dispatch(actions.beforeAddBotMessage());
                     document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 200;
-                    sleep(Math.random() * 1000)
+                    sleep(Math.random() * getTimeout())
                         .then(() => {
                             dispatch(addBotMessage({ title: suggestion.title }));
                             pushMessages(suggestions, counter + 1, dispatch);
@@ -47,7 +45,7 @@ const pushMessages = (suggestions, counter, dispatch) => {
             } else {
                 dispatch(actions.beforeAddBotMessage());
                 document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 200;
-                sleep(Math.random() * 1000)
+                sleep(Math.random() * getTimeout())
                     .then(() => {
                         dispatch(addBotMessage({ title: suggestion.title }));
                         pushMessages(suggestions, counter + 1, dispatch);
@@ -78,10 +76,14 @@ const addUserMessage = (suggestion) => (dispatch) => {
 };
 
 const addBotMessage = (suggestion) => (dispatch) => {
+    const messageTitle = Array.isArray(suggestion.title)
+        ? suggestion.title[getRandomInt(0, suggestion.title.length - 1)]
+        : suggestion.title;
+
     const message = {
         type: 'bot',
         id: new Date().getTime(),
-        message: suggestion.title,
+        message: messageTitle,
     };
 
     dispatch(actions.addMessage(message));
