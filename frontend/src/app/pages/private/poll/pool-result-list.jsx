@@ -5,6 +5,7 @@ import { Container, Row, Col, Card, CardBody } from 'reactstrap';
 class PollResultList extends React.Component {
     constructor(props) {
         super(props);
+ 
     }
 
     render() {
@@ -12,7 +13,7 @@ class PollResultList extends React.Component {
             <Container>
                 {
                     this.props.data.map(poll => (
-                        <Row>
+                        <Row key={ poll.id }>
                             <Col lg={{ size: 12 }}>
                                 <Card>
                                     <CardBody>
