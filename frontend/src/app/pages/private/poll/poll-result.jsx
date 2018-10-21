@@ -1,5 +1,6 @@
 import React from 'react';
 import Chart from "app/components/chart/chart";
+import moment from 'moment';
 
 class PollResult extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class PollResult extends React.Component {
           {this.props.data.description}
         </div>
         <div>
-          {this.props.data.date}
+          {moment(this.props.data.date).format('YYYY-MM-DD HH:mm')}
         </div>
       </div>
     );
