@@ -147,106 +147,116 @@ namespace VugleBE.Context
                     new Suggestion
                     {
                         Id = 1,
-                        Title = "Pranešk",
-                        KeywordSuggestions = new List<KeywordSuggestions>
-                        {
-                           new KeywordSuggestions
-                           {
-                               KeywordId = 1,
-                               SuggestionId = 1
-                           },
-                            new KeywordSuggestions
-                           {
-                               KeywordId = 2,
-                               SuggestionId = 1
-                           },
-                        },
+                        Title = "Įdomus faktas",
                         Responses = JsonConvert.SerializeObject(new List<object>
                         {
-                            new { title = "Kokios pramogos domina?" },
-                            new { title = new List<string>{"Pranešti?", "Kas nutiko?"}, random = 0.5 },
-                            new { title = "title", date = "2018-04-13", description = "text", photo = "123", url = "www.vilnius.lt"}
+                            new {   title = "Ar žinai kad buvo pastatytas Gedimino bokštas?", 
+                                    description = "Garsusis Gedimimo bokštas pastatytas Lietuvos didžiojo kunigaikščio Vytauto laikais (XV amžiuje)", 
+                                    photo = "http://priekavos.lt/wp-content/uploads/2017/01/Vilnius.jpg", 
+                                    url = "http://priekavos.lt/15-idomiu-faktu-apie-vilniu/"},
+                            new {   title = "Vienas didžiausiu Vilniaus potvynių", 
+                                    description = "1931 m. Vilnių užliejo potvynis, kuris pridarė daugiausia žalos lyginant su ankstesniais potvyniais. Gyventojai buvo priversti palikti namus, vieni glaudėsi kareivinėse, kiti apsistojo pas giminaičius.", 
+                                    photo = "http://www.stasys.igs.lt/potvynis-vilniuje-1931-m/", 
+                                    url = "http://www.stasys.igs.lt/wp-content/uploads/2010/03/1267436357_15-660x330.jpg"},
+                            new {   title = "Ar žinote kaip seniau atrodė Vilnius?", 
+                                    photo = "http://www.autc.lt/Handlers/ImageHandler.ashx?b=true&i=755&fn=9a0a7c53-663f-4777-9133-14ad8c7acab3", 
+                                    url = "https://www.facebook.com/VilniusVisualArchive/"}
                         })
                     },
                     new Suggestion
                     {
                         Id = 2,
-                        Title = "Pramogauk",
-                        KeywordSuggestions = new List<KeywordSuggestions>
+                        Title = "Kas vyksta Vilniuje?",
+                        Responses = JsonConvert.SerializeObject(new List<object>
                         {
-                            new KeywordSuggestions
-                           {
-                               KeywordId = 5,
-                               SuggestionId = 2
-                           },
-                        },
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Kokios pramogos domina?" } })
+                            new {   title = "Ekskursija \"Po Užupio Respubliką\"", 
+                                    photo = "https://www.savaitgalis.lt/wp-content/uploads/cache/images/2018/10/Uzupis_Undinele_700/Uzupis_Undinele_700-3287700341.jpg", 
+                                    url = "https://www.savaitgalis.lt/renginys/ekskursija-po-uzupio-respublika/"},
+                            new {   title = "Romantinė komedija \"Žaidimas nebaigtas\"", 
+                                    photo = "https://renginiai.kasvyksta.lt/59669/romantine-komedija-zaidimas-nebaigtas/", 
+                                    url = "https://renginiai.kasvyksta.lt/uploads/events/59669/big/83c015e4.jpg"},
+                            new {   title = "Daugiau renginių gali rasti čia", url ="https://www.mzirafos.lt/renginiai-vilniuje-kas-vyksta/"}
+                        })
                     },
                     new Suggestion
                     {
                         Id = 3,
-                        Title = "Pažink",
-                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Ką nori pažinti?" } })
-
-                        // KeywordSuggestions = new List<KeywordSuggestions>
-                        // {
-                        //    new KeywordSuggestions
-                        //    {
-                        //        KeywordId = 1,
-                        //        SuggestionId = 2
-                        //    },
-                        //     new KeywordSuggestions
-                        //    {
-                        //        KeywordId = 2,
-                        //        SuggestionId = 2
-                        //    },
-                        // }
-
-                    },
-                    new Suggestion
-                    {
-                        Id = 4,
                         Title = "Sužinok",
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
                            new KeywordSuggestions
                            {
                                KeywordId = 6,
-                               SuggestionId = 4
+                               SuggestionId = 3
                            },
                             new KeywordSuggestions
                            {
                                KeywordId = 7,
-                               SuggestionId = 4
+                               SuggestionId = 3
                            },
                         },
                         Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Ką nori sužinoti?" } })
                     },
                     new Suggestion
                     {
+                        Id = 4,
+                        Title = "Pramogauk",
+                        Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilniuje tikrai rasi ką veikti" } })
+                    },
+                    new Suggestion
+                    {
                         Id = 5,
+                        Title = "Pranešk",
+                        KeywordSuggestions = new List<KeywordSuggestions>
+                        {
+                           new KeywordSuggestions
+                           {
+                               KeywordId = 1,
+                               SuggestionId = 5
+                           },
+                            new KeywordSuggestions
+                           {
+                               KeywordId = 2,
+                               SuggestionId = 5
+                           },
+                        }
+                    },
+                    new Suggestion
+                    {
+                        Id = 6,
+                        Title = "Kas yra vugle?",
+                        Responses = JsonConvert.SerializeObject(new List<object>
+                        {
+                            new {   title = "Tai aš!", photo = "https://static.boredpanda.com/blog/wp-content/uploads/2018/08/snake-hands-1-5b7fef345f80c__700.jpg"},
+                            new {   title = "Elektroninis Vilniaus mero pakaitalas" },
+                            new {   title = "Mano tikslas yra padėti rasti jums aktualią informaciją apie Vilnių greitai!"}
+                        })
+                    },
+                    new Suggestion
+                    {
+                        Id = 1000,
                         Title = "Skundas",
-                        ParentId = 1,
+                        ParentId = 5,
                         Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Praneškite nusiskundimą, pateikdami ji čia.", url = "https://tvarkaumiesta.lt/" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
                             new KeywordSuggestions
                             {
                                 KeywordId = 4,
-                                SuggestionId = 5
+                                SuggestionId = 1000
                             },
                                 new KeywordSuggestions
                             {
                                 KeywordId = 3,
-                                SuggestionId = 5
+                                SuggestionId = 1000
                             },
                         }
                     },
                     new Suggestion
                     {
-                        Id = 6,
+                        Id = 1001,
                         Title = "Nuomonė",
-                        ParentId = 1,
+                        ParentId = 5,
                         Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Praneškite savo nuomone", url = "https://tvarkaumiesta.lt/" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
@@ -266,7 +276,7 @@ namespace VugleBE.Context
                     {
                         Id = 7,
                         Title = "Peticija",
-                        ParentId = 1,
+                        ParentId = 5,
                         Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Peticijas galite pateikti", url = "https://paslaugos.vilnius.lt/petitions" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
@@ -291,7 +301,7 @@ namespace VugleBE.Context
                     {
                         Id = 8,
                         Title = "Maistas",
-                        ParentId = 2,
+                        ParentId = 4,
                         Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Skanus maistas Vilniuje", url = "https://www.tripadvisor.com/Restaurants-g274951-Vilnius_Vilnius_County.html" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
@@ -316,7 +326,7 @@ namespace VugleBE.Context
                     {
                         Id = 9,
                         Title = "Renginiai",
-                        ParentId = 2,
+                        ParentId = 4,
                         Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Kas vyksta vilniuje galit sužinoti", url = "https://renginiai.kasvyksta.lt/vilnius" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
@@ -336,7 +346,7 @@ namespace VugleBE.Context
                     {
                         Id = 10,
                         Title = "Laisvalaikis",
-                        ParentId = 2,
+                        ParentId = 4,
                         Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilnius pilnas laisvalaikio veiklų" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
@@ -356,7 +366,7 @@ namespace VugleBE.Context
                     {
                         Id = 11,
                         Title = "Istorija",
-                        ParentId = 3,
+                        ParentId = 1,
                         Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilnius pilnas istorijos" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
@@ -376,7 +386,7 @@ namespace VugleBE.Context
                     {
                         Id = 12,
                         Title = "Kultūra",
-                        ParentId = 3,
+                        ParentId = 1,
                         Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilnius gausus kultūra" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
@@ -396,7 +406,7 @@ namespace VugleBE.Context
                     {
                         Id = 13,
                         Title = "Servisai",
-                        ParentId = 4,
+                        ParentId = 3,
                         Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilniaus paslaugos" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
@@ -416,7 +426,7 @@ namespace VugleBE.Context
                     {
                         Id = 14,
                         Title = "Finansai",
-                        ParentId = 4,
+                        ParentId = 3,
                         Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Visa informacija susijusi su finansais", url = "https://atviras.vilnius.lt/kategorijos/finansai-ir-turtas" } }),
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
@@ -436,7 +446,7 @@ namespace VugleBE.Context
                     {
                         Id = 15,
                         Title = "Transportas",
-                        ParentId = 4,
+                        ParentId = 3,
                         Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Vilniaus transporto informacija vienoje vietoje", url = "https://www.trafi.com/lt/vilnius" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
@@ -456,7 +466,7 @@ namespace VugleBE.Context
                     {
                         Id = 16,
                         Title = "Parduotuvės",
-                        ParentId = 4,
+                        ParentId = 3,
                         Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Puikus metas apsipirkti", url = "http://www.vilnius-tourism.lt/ka-veikti/apsipirkimas/prekybos-ir-pramogu-centrai/" } }),
                         // KeywordSuggestions = new List<KeywordSuggestions>
                         // {
