@@ -82,6 +82,8 @@ class PollForm extends React.Component {
 
         const wrapperClassname = classnames(styles['wrapper'], type === 'user' ? styles['blue'] : styles['gray']);
 
+        const hasChartResults = this.state.options.map(x => x.value > 0).some((value) => value === true);
+
         return (
             <div className={wrapperClassname}>
                 <div className={chatStyles['message-type-gray']}>
@@ -114,14 +116,16 @@ class PollForm extends React.Component {
 									onClick={() => this.submitAnswer()}
 								/>
 							</div>
-						}
-                        <div>
-							<Button 
-								height={40}
-								title="Rodyti rezultatus"
-								onClick={() => this.showChart()}
-							/>
-                        </div>
+                        }
+                        { hasChartResults && 
+                            <div>
+                                <Button 
+                                    height={40}
+                                    title="Rodyti rezultatus"
+                                    onClick={() => this.showChart()}
+                                />
+                            </div>
+                        }
                         <div>
                             {this.state.isChartShown && <Chart data={ this.state.options }/>}
                         </div>
