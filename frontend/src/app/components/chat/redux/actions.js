@@ -92,7 +92,7 @@ const addUserMessage = (suggestion) => (dispatch) => {
                         sleep(1000)
                             .then(() => {
                                 dispatch(actions.setBotResponding(false));
-                                dispatch(addBotMessage({ title: 'Kaip galėčiau dar Jums padėti?' }));
+                                dispatch(addBotMessage({ title: 'Ar dar reikia pagalbos ?' }));
                                 document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
                             });
                     });
