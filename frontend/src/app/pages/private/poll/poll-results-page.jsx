@@ -37,8 +37,8 @@ class PollResultsPage extends React.Component {
                             <Card>
                                 <CardBody>
                                     <h1>Apklausų rezultatai</h1>
-                                    {this.state.polls.length == false && <Spinner />}
-                                    {this.state.polls.length === 0 && <div>Apklausų nėra</div>}
+                                    {!this.state.polls && <Spinner />}
+                                    {!!this.state.polls && this.state.polls.length === 0 && <div>Apklausų nėra</div>}
                                     {this.state.polls.length > 0 && <PollResultList data={this.state.polls} />}
                                 </CardBody>
                             </Card>
