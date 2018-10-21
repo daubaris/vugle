@@ -863,7 +863,7 @@ namespace VugleBE.Context
                         {
                             new {title = "Paulius Daubaris"},
                             new {title = "Augustinas Grikis"},
-                            new {title = "Domantas Lekvaičius"},
+                            new {title = "Domantas Lekavičius"},
                             new {title = "Deividas Maciejauskas"},
                             new {title = "Benas Zabita"},
                             new {title = "Mantas Žilaitis" },
