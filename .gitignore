@@ -573,3 +573,6 @@ typings/
 
 
 # End of https://www.gitignore.io/api/csharp,reactnative
+
+# DB
+.db
