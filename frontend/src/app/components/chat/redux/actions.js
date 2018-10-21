@@ -89,7 +89,7 @@ const addUserMessage = (suggestion) => (dispatch) => {
                         dispatch(actions.beforeAddBotMessage());
                         dispatch(actions.setBotResponding(true));
 
-                        sleep(300)
+                        sleep(1000)
                             .then(() => {
                                 dispatch(actions.setBotResponding(false));
                                 dispatch(addBotMessage({ title: 'Kaip galėčiau dar Jums padėti?' }));
@@ -101,7 +101,7 @@ const addUserMessage = (suggestion) => (dispatch) => {
 };
 
 const addBotMessage = (suggestion) => (dispatch) => {
-    if (suggestion.url) {
+    if (suggestion.url || suggestion.photo) {
         const message = {
             type: 'bot',
             id: new Date().getTime(),
