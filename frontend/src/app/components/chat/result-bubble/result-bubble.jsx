@@ -7,13 +7,13 @@ class ResultBubble extends React.Component {
 			item,
 		} = this.props;
 
-		if (!item || !item.url) {
+		if (!item) {
 			return null;
 		}
 
 		return (
 			<div className={ styles['result-bubble'] }>
-				{ item.photo && 
+				{ item.photo &&
 					<div className={ styles['image-wrap'] }>
 						<div
 							className={ styles['image'] }
@@ -26,12 +26,12 @@ class ResultBubble extends React.Component {
 						/>
 					</div>
 				}
-				{ item.title && 
+				{ item.title &&
 					<div className={ styles['title'] }>
 						<a href={item.url} target='_blank'>{item.title}</a>
 					</div>
 				}
-				{ item.description && 
+				{ item.description &&
 					<div className={ styles['description']}>{ item.description }</div>
 				}
 				{ item.date &&
