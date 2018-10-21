@@ -1,15 +1,15 @@
 import React from 'react';
 import { Alert } from 'reactstrap';
 
-import ChartPage from '../chart/chart-page'
-import NotificationPage from '../notification/notification-page'
+import NotificationPage from '../notification/notification-page';
+import PollResultsPage from '../poll/poll-results-page';
 
 class DashboardPage extends React.Component {
     static renderContent() {
         return (
             <div>
                 <NotificationPage />
-                <ChartPage />
+                <PollResultsPage />
             </div>
         );
     }
