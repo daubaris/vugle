@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "Įdomus faktas",
+    "response": [
+      {
+        "title": "Garsusis Gedimimo bokštas pastatytas Lietuvos didžiojo kunigaikščio Vytauto laikais (XV amžiuje)",
+        "url": "http://priekavos.lt/15-idomiu-faktu-apie-vilniu/",
+        "photo": "http://priekavos.lt/wp-content/uploads/2017/01/Vilnius.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Kas vyksta Vilniuje?",
+    "response": []
+  },
+  {
+    "id": "3",
+    "title": "Sužinok",
+    "response": []
+  },
+  {
+    "id": "4",
+    "title": "Pramogauk",
+    "response": []
+  },
+  {
+    "id": "5",
+    "title": "Pranešk",
+    "response": []
+  },
+  {
+    "id": "6",
+    "title": "Kas yra vugle?",
+    //TODO: pridėti emoji
+    "response": [
+      {
+        "title": "Tai aš!",
+        "url": "https://static.boredpanda.com/blog/wp-content/uploads/2018/08/snake-hands-1-5b7fef345f80c__700.jpg"
+      },
+      {
+        "title": "Elektroninis Vilniaus"
+      },
+      {
+        "title": "Mano tikslas yra padėti rasti jums aktualią informaciją apie Vilnių greitai!"
+      }
+    ]
+  }
+]
