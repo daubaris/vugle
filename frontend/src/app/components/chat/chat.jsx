@@ -17,15 +17,15 @@ function getRandomInt(min, max) {
 
 // Maps message array and adds random emoji to the end of the sentence
 export function randomEmojiGenerator(message) {
-    const emojipedia = [' 🤟', ' ✌️', ' 🖖', ' 🙂', ' 👏', ' 💪', ' 😎', '', '', '', ''];
+    const emojipedia = [' 🤟', ' ✌️', ' 🖖', ' 🙂', ' 👏', ' 💪', ' 😎', '', ''];
 
     if(typeof message === 'object'){
         return message.map(item => (
-            item + emojipedia[getRandomInt(0,10)]
+            item + emojipedia[getRandomInt(0,8)]
         ));
     }
 
-    else return message + emojipedia[getRandomInt(0,10)];
+    else return message + emojipedia[getRandomInt(0,8)];
 }
 
 class Chat extends React.Component {
@@ -51,7 +51,7 @@ class Chat extends React.Component {
             setTimeout(() => {
                 actions.chat.beforeAddBotMessage();
                 setTimeout(() => {
-                    actions.chat.addBotMessage({ title: 'Kaip galetume Jums padeti?'});
+                    actions.chat.addBotMessage({ title: 'Kaip galiu padėti?'});
                     actions.chat.setBotResponding(false);
                 }, 500);
             }, 300)

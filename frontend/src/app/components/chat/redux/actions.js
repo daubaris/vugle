@@ -39,24 +39,24 @@ const pushMessages = (suggestions, counter, dispatch, reset) => {
             if (suggestion.random) {
                 if (Math.random() > suggestion.random) {
                     dispatch(actions.beforeAddBotMessage());
-                    document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
+                    document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 30000;
                     sleep(Math.random() * getTimeout())
                         .then(() => {
                             dispatch(addBotMessage(suggestion));
                             pushMessages(suggestions, counter + 1, dispatch);
-                            document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
+                            document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 30000;
                         });
                 } else {
                     pushMessages(suggestions, counter + 1, dispatch);
                 }
             } else {
                 dispatch(actions.beforeAddBotMessage());
-                document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
+                document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 30000;
                 sleep(Math.random() * getTimeout())
                     .then(() => {
                         dispatch(addBotMessage(suggestion));
                         pushMessages(suggestions, counter + 1, dispatch);
-                        document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
+                        document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 30000;
                     });
             }
         } else if (!suggestion) {
@@ -74,7 +74,7 @@ const addUserMessage = (suggestion) => (dispatch) => {
 
     dispatch(actions.addMessage(message));
     dispatch(actions.setBotResponding(true));
-    document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
+    document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 30000;
 
     sleep(300)
         .then(() => {
@@ -89,11 +89,11 @@ const addUserMessage = (suggestion) => (dispatch) => {
                         dispatch(actions.beforeAddBotMessage());
                         dispatch(actions.setBotResponding(true));
 
-                        sleep(300)
+                        sleep(2000)
                             .then(() => {
                                 dispatch(actions.setBotResponding(false));
-                                dispatch(addBotMessage({ title: 'Kaip galėčiau dar Jums padėti?' }));
-                                document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
+                                dispatch(addBotMessage({ title: 'Ar dar reikia pagalbos ?' }));
+                                document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 30000;
                             });
                     });
             }
@@ -101,7 +101,7 @@ const addUserMessage = (suggestion) => (dispatch) => {
 };
 
 const addBotMessage = (suggestion) => (dispatch) => {
-    if (suggestion.url) {
+    if (suggestion.url || suggestion.photo) {
         const message = {
             type: 'bot',
             id: new Date().getTime(),

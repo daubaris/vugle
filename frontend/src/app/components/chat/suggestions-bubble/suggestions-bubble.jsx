@@ -18,6 +18,8 @@ class SuggestionsBubble extends React.Component {
             disabled,
         } = this.props;
 
+        console.log(suggestion);
+
         if (!disabled) {
             onClick(suggestion);
         }

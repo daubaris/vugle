@@ -19,7 +19,7 @@ class SuggestionBar extends React.Component {
                     title: 'Noriu pranešti 🙋',
                     responses: [
                         {
-                            title: randomEmojiGenerator('Pranešti?'),
+                            title: randomEmojiGenerator('Puiku!'),
                             random: 0.5,
                         },
                         {
@@ -50,7 +50,7 @@ class SuggestionBar extends React.Component {
                     title: 'Noriu pramogauti 🤙',
                     responses: [
                         {
-                            title: 'Kokios pramogos domina?',
+                            title: 'Kokios pramogos tave domina?',
                         },
                     ],
                 },
@@ -84,7 +84,11 @@ class SuggestionBar extends React.Component {
 
 		return (
 			<div className={ styles['suggestion-bar'] }>
-				{ chat.suggestions.suggestions.map(suggestion => (
+				{ chat.suggestions.suggestions
+                    .sort((a, b) => {
+                        return a.id - b.id;
+                    })
+                    .map(suggestion => (
 					<SuggestionsBubble
 						key={ suggestion.id }
                         suggestion={ suggestion }
