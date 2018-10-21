@@ -344,6 +344,7 @@ namespace VugleBE.Context
                         Title = "Renginiai 🎟️",
                         ParentId = 4,
                         Responses = JsonConvert.SerializeObject(new List<object> { new { title = "Kas vyksta Vilniuje galite sužinoti", url = "https://renginiai.kasvyksta.lt/vilnius" } }),
+
                         KeywordSuggestions = new List<KeywordSuggestions>
                         {
                            new KeywordSuggestions

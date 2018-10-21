@@ -1,6 +1,7 @@
 import React from 'react';
-import { Icon } from 'evergreen-ui';
 import styles from './messages.scss';
+import Poll from './../poll-form/poll';
+import ResultBubble from "app/components/chat/result-bubble/result-bubble";
 import classnames from 'classnames';
 
 class Messages extends React.Component {
@@ -8,6 +9,10 @@ class Messages extends React.Component {
 		const {
 			type,
 			message,
+			allMessage: {
+                pollId,
+				data,
+			},
 		} = this.props;
 
 		const wrapperClassname = classnames(styles['wrapper'], type === 'user' ? styles['blue'] : styles['gray']);
@@ -16,12 +21,20 @@ class Messages extends React.Component {
 			<div className={ wrapperClassname }>
 				{ type !== 'user' &&
 					<div className={ styles['avatar'] }>
-						<Icon size={30} icon="user"/>
+						🤖
 					</div>
 				}
-				<div className={ styles['message-type-' + (type === 'user' ? 'blue' : 'gray')] }>
-					{ message }
-				</div>
+				{ pollId &&
+					<Poll id={ pollId } />
+				}
+				{ !pollId && !data &&
+					<div className={ styles['message-type-' + (type === 'user' ? 'blue' : 'gray')] }>
+						{ message }
+					</div>
+				}
+				{ data &&
+					<ResultBubble item={ data }/>
+				}
 			</div>
 		);
 	}

@@ -6,6 +6,7 @@ import chatActions from './../redux/actions';
 import SuggestionsBubble from '../suggestions-bubble/suggestions-bubble';
 
 import styles from './suggestions-bar.scss';
+import { randomEmojiGenerator } from '../chat';
 
 class SuggestionBar extends React.Component {
     constructor(props) {
@@ -15,20 +16,20 @@ class SuggestionBar extends React.Component {
             suggestions: [
                 {
                     id: 1,
-                    title: 'Noriu pranešti',
+                    title: 'Noriu pranešti 🙋',
                     responses: [
                         {
-                            title: 'Pranešti?',
+                            title: randomEmojiGenerator('Pranešti?'),
                             random: 0.5,
                         },
                         {
                             title: 'Ką norėtum pranešti?'
-                        }
+                        },
                     ]
                 },
                 {
                     id: 2,
-                    title: 'Noriu sužinoti',
+                    title: 'Noriu sužinoti 📚',
                     responses: [
                         {
                             title: 'Ką norėtumet sužinoti?',
@@ -37,7 +38,7 @@ class SuggestionBar extends React.Component {
                 },
                 {
                     id: 3,
-                    title: 'Noriu pažinti',
+                    title: 'Noriu pažinti 🤔',
                     responses: [
                         {
                             title: 'Ką norėtumet pažinti?',
@@ -46,7 +47,7 @@ class SuggestionBar extends React.Component {
                 },
                 {
                     id: 4,
-                    title: 'Noriu pramogauti',
+                    title: 'Noriu pramogauti 🤙',
                     responses: [
                         {
                             title: 'Kokios pramogos domina?',
@@ -59,6 +60,13 @@ class SuggestionBar extends React.Component {
         this.onClick = this.onClick.bind(this);
     }
 
+    componentDidMount() {
+        const {
+            actions,
+        } = this.props;
+
+        actions.chat.getSuggestions(0);
+    }
 
     onClick(suggestion) {
         const {
@@ -70,17 +78,19 @@ class SuggestionBar extends React.Component {
 
     render() {
 		const {
-            suggestions,
-		} = this.state;
+		    loading,
+            chat,
+        } = this.props;
 
 		return (
 			<div className={ styles['suggestion-bar'] }>
-				{ suggestions.map(suggestion => (
+				{ chat.suggestions.suggestions.map(suggestion => (
 					<SuggestionsBubble
 						key={ suggestion.id }
                         suggestion={ suggestion }
 						onClick={ this.onClick }
-					/>
+                        disabled={ loading }
+                    />
 				))}
 			</div>
 		);
