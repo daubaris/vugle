@@ -17,10 +17,10 @@ class PollResult extends React.Component {
           <Chart data={this.props.data.options} />
         </div>
         <div>
-          {this.props.data.description}
+          Aprašymas: {this.props.data.description}
         </div>
         <div>
-          {moment(this.props.data.date).format('YYYY-MM-DD HH:mm')}
+          Data: {moment(this.props.data.date).format('YYYY-MM-DD HH:mm')}
         </div>
       </div>
     );
