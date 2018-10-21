@@ -84,7 +84,11 @@ class SuggestionBar extends React.Component {
 
 		return (
 			<div className={ styles['suggestion-bar'] }>
-				{ chat.suggestions.suggestions.map(suggestion => (
+				{ chat.suggestions.suggestions
+                    .sort((a, b) => {
+                        return a.id - b.id;
+                    })
+                    .map(suggestion => (
 					<SuggestionsBubble
 						key={ suggestion.id }
                         suggestion={ suggestion }
