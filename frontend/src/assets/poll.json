@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Hakatonai",
+    "description": "Ar Vilniuje vyksta pakankamai hakatonų?",
+    "answers": [
+      "Taip!",
+      "Jeigu būtų daugiau, būčiau nieko prieš",
+      "Ne",
+      "Ką če reiške tas jųsų hakatuonas?"
+    ]
+  },
+  {
+    "title": "Įvertink mane",
+    "description": "Ar jums patinka bendrauti su manim, nes man tai patinka!",
+    "answers": [
+      "Taip, labai!!! <3", //TODO: add heart emoji.
+      "Taip!"
+    ]
+  }
+]

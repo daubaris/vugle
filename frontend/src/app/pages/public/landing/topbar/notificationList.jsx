@@ -29,14 +29,15 @@ class NotificationList extends React.Component {
     render() {
         return (
             <div>
-                { this.state.notifications.length === 0 && <Spinner/> }
-                { this.state.notifications.length > 0 &&
+                {!this.state.notifications && <Spinner />}
+                {!!this.state.notifications && this.state.notifications.length === 0 && <div>Žinučių nėra.</div>}
+                {this.state.notifications.length > 0 && 
                 this.state.notifications.map(notification => (
                     <Alert intent={ notification.type !== "info" ? notification.type : "none" }
                            title={ notification.title }
                            marginBottom={ 16 }
                            key={ notification.id }>
-                        Data: { moment(notification.date).format('MM/DD/YYYY HH:mm') } <br/>
+                        Data: { moment(notification.date).format('YYYY-MM-DD HH:mm') } <br/>
                         { notification.description }
                     </Alert>
                 ))

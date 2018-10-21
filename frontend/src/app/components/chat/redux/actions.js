@@ -31,7 +31,7 @@ function sleep(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
-const pushMessages = (suggestions, counter, dispatch) => {
+const pushMessages = (suggestions, counter, dispatch, reset) => {
     const suggestion = suggestions[counter];
 
     return new Promise((resolve, reject) => {
@@ -42,7 +42,7 @@ const pushMessages = (suggestions, counter, dispatch) => {
                     document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
                     sleep(Math.random() * getTimeout())
                         .then(() => {
-                            dispatch(addBotMessage({ title: suggestion.title }));
+                            dispatch(addBotMessage(suggestion));
                             pushMessages(suggestions, counter + 1, dispatch);
                             document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
                         });
@@ -54,12 +54,12 @@ const pushMessages = (suggestions, counter, dispatch) => {
                 document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
                 sleep(Math.random() * getTimeout())
                     .then(() => {
-                        dispatch(addBotMessage({ title: suggestion.title }));
+                        dispatch(addBotMessage(suggestion));
                         pushMessages(suggestions, counter + 1, dispatch);
                         document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
                     });
             }
-        } else  if (!suggestion) {
+        } else if (!suggestion) {
             dispatch(actions.setBotResponding(false));
             return resolve();
         }
@@ -78,7 +78,25 @@ const addUserMessage = (suggestion) => (dispatch) => {
 
     sleep(300)
         .then(() => {
-            pushMessages(suggestion.responses, 0, dispatch);
+            pushMessages(suggestion.responses, 0, dispatch, suggestion.childrenCount);
+
+            if (suggestion.childrenCount) {
+                dispatch(getSuggestions(suggestion.id))
+            } else {
+                sleep(1000)
+                    .then(() => {
+                        dispatch(getSuggestions(0));
+                        dispatch(actions.beforeAddBotMessage());
+                        dispatch(actions.setBotResponding(true));
+
+                        sleep(300)
+                            .then(() => {
+                                dispatch(actions.setBotResponding(false));
+                                dispatch(addBotMessage({ title: 'Kaip galėčiau dar Jums padėti?' }));
+                                document.getElementById('chart-area').scrollTop = document.getElementById('chart-area').clientHeight + 300;
+                            });
+                    });
+            }
         });
 };
 
@@ -122,7 +140,7 @@ const addPollMessage = (id) => (dispatch) => {
     }, 1000);
 };
 
-const getSuggestions = (id) => (dispatch) => {
+const getSuggestions = (id) => (dispatch, getState) => {
     dispatch(actions.beforeAddBotMessage());
     restService.get(`/api/Suggestion/${id}`)
         .then((data) => {
