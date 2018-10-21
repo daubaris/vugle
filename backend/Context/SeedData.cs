@@ -814,8 +814,8 @@ namespace VugleBE.Context
                     new Poll
                     {
                         Date = DateTime.Now,
-                        Description = "Kiek Jums metų?",
-                        Title = "Tikriname sistemos naudotojų amžių",
+                        Description = "Tikriname sistemos naudotojų amžių",
+                        Title = "Kiek Jums metų?",
                         Options = new List<Option>{
                             new Option
                             {
