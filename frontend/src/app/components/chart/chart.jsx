@@ -5,16 +5,6 @@ class Chart extends React.Component {
     super(props);
   }
 
-  hasVotes() {
-    var totalVotes = 0;
-    this.props.data.forEach(
-      function(option){
-          totalVotes += +option.value;
-      }
-    )
-    return totalVotes > 0;
-  }
-
   parseOptions() {
     return this.props.data.map(option => (
       {
@@ -57,10 +47,12 @@ class Chart extends React.Component {
       // {% endraw %}
     };
 
+    const hasResults = this.props.data.map(x => x.value > 0).some((hasVotes) => hasVotes === true);
+  
     return (
       <React.Fragment>
-        { this.hasVotes() && <PieChart data={this.parseOptions()} options={chartOptions} /> }
-        { !this.hasVotes() && <div><i>Balsų nėra</i></div> }
+        { hasResults && <PieChart data={this.parseOptions()} options={chartOptions} /> }
+        { !hasResults && <div><i>Balsų nėra</i></div> }
       </React.Fragment>
     );
   }
